@@ -2,7 +2,7 @@ REPORT z_excel_download.
 
 CONSTANTS: lc_separ VALUE ';'. "separator
 
-DATA: lt_output TYPE TABLE OF zfi_elko_int WITH HEADER LINE,
+DATA: lt_output TYPE TABLE OF spfli WITH HEADER LINE,
       lt_iout   TYPE TABLE OF string,
       ls_xout   TYPE string,
       ls_str    TYPE string. "convert P to string, otherwise concatenate is not possible
