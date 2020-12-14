@@ -23,7 +23,7 @@ ENDFORM.
 
 ## Classes
 
-### loop gorupby
+### loop group by
 
 ```abap
 CLASS lcl_loop_groupby DEFINITION CREATE PRIVATE FINAL.
