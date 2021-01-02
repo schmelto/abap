@@ -76,3 +76,24 @@ START-OF-SELECTION.
 lcl_loop_groupby=>create( )->run( ).
 
 ```
+
+
+
+# ABAP Basics
+
+
+
+
+btw regarding question number 2, point 1. 
+stcd1 is a 16 character field, and ls_e1edka1-partn is a 17 character, 
+
+if you still want to take the rightmost 8 characters of stcd1 and assign them to ls_e1edka1-partn, 
+
+do this. 
+
+```abap
+SELECT SINGLE stcd1 FROM lfa1 INTO data(stcd1) WHERE lifnr = im_reguh-lifnr.
+
+ls_e1edka1-partn = stcd1+8(8).
+```
+
