@@ -4,6 +4,42 @@
 
 
 ### Get X last characters of a string
+
+```abap
+CLASS helper DEFINITION.
+  PUBLIC SECTION.
+    METHODS
+      get_x_last_chars
+        IMPORTING
+          string         TYPE string
+          num_last_chars TYPE i
+        RETURNING
+          VALUE(result)  TYPE string.
+ENDCLASS.
+
+CLASS helper IMPLEMENTATION.
+
+  METHOD get_x_last_chars.
+    IF strlen( string ) < num_last_chars.
+      result = string.
+    ELSE.
+      result = substring( val = string
+                             off = strlen( string ) - num_last_chars
+                             len = num_last_chars ).
+    ENDIF.
+  ENDMETHOD.
+ENDCLASS.
+
+START-OF-SELECTION.
+
+  DATA string TYPE string VALUE '0123456789'.
+  DATA(helper) = NEW helper( ).
+  string = helper->get_x_last_chars( string         = string
+                                     num_last_chars = 5 ).
+```
+
+
+Form obsolete see: https://answers.sap.com/questions/13218815/when-does-it-make-sense-to-use-subroutines-form-an.html
 ```abap
 FORM get_x_last_chars USING iv_string
                             iv_num_last_chars TYPE i
