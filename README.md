@@ -14,7 +14,7 @@ string = substring( val = string
 ```
 **Problem:** Invalid access to a string using negative offset when the string is shorter then the offset!
 
-To implement this in our own custome class we can use following code:
+To implement this in our own custom class we can use following code:
 
 ```abap
 CLASS helper DEFINITION.
