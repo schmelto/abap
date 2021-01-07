@@ -24,8 +24,8 @@ CLASS helper IMPLEMENTATION.
       result = string.
     ELSE.
       result = substring( val = string
-                             off = strlen( string ) - num_last_chars
-                             len = num_last_chars ).
+                          off = strlen( string ) - num_last_chars
+                          len = num_last_chars ).
     ENDIF.
   ENDMETHOD.
 ENDCLASS.
