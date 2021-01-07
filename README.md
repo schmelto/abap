@@ -77,7 +77,7 @@ An **other solution** for this problem can be solved like this:
 SELECT SINGLE stcd1 FROM lfa1 INTO data(stcd1) WHERE lifnr = 123456789.
 string = stcd1+8(8).
 ```
-`stcd1` is a 16 character field, if you want to take the rightmost 8 characters of stcd1 with `stcd1+8(8)`.
+`stcd1` is a 16 character field, you can to take the rightmost 8 characters of stcd1 with `stcd1+8(8)` (remember 8 + 8 = 16).
 
 ### loop group by
 
