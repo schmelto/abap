@@ -1,4 +1,10 @@
-# ABAP-Templates
+# ABAP
+
+## Eclipse Shortcuts
+
+| shortcut | what it does |
+|----|----|
+| `str` + `1` | add ABAP Doc |
 
 ## Methods
 
