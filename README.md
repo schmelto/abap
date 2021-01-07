@@ -1,9 +1,20 @@
 # ABAP-Templates
 
-## Forms
+## Methods
 
 
 ### Get X last characters of a string
+
+To get the x last characters of a string we can use following method:
+
+```abap
+string = substring( val = string
+                          off = strlen( string ) - 8
+                          len = 8 ).
+```
+**Problem:** Invalid access to a string using negative offset when the string is shorter then the offset!
+
+To implement this in our own custome class we can use following code:
 
 ```abap
 CLASS helper DEFINITION.
@@ -38,31 +49,35 @@ START-OF-SELECTION.
                                      num_last_chars = 5 ).
 ```
 
+Why should we define a own method?
+* Reducing parameters in the function
+* make the code more readable
+* catch "Invalid access to a string using negative offset" within the `IF`-Statement in the method
 
-Form obsolete see: https://answers.sap.com/questions/13218815/when-does-it-make-sense-to-use-subroutines-form-an.html
+We also can use a subroutine to get the same result in the code:
+
 ```abap
-FORM get_x_last_chars USING iv_string
-                            iv_num_last_chars TYPE i
-                      CHANGING cv_result.
-  IF strlen( iv_string ) < iv_num_last_chars.
+FORM get_x_last_chars USING string
+                            num_last_chars TYPE i
+                      CHANGING result.
+  IF strlen( string ) < num_last_chars.
     cv_result = iv_string.
   ELSE.
-    cv_result = substring( val = iv_string
-                           off = strlen( iv_string ) - iv_num_last_chars
-                           len = iv_num_last_chars ).
+    result = substring( val = string
+                           off = strlen( string ) - num_last_chars
+                           len = num_last_chars ).
   ENDIF.
 ENDFORM.
 ```
+This approach is outdated and should not used anymore (see [here](https://answers.sap.com/questions/13218815/when-does-it-make-sense-to-use-subroutines-form-an.html))
 
-**Other solution:**
-stcd1 is a 16 character field, and ls_e1edka1-partn is a 17 character, if you want to take the rightmost 8 characters of stcd1 and assign them to ls_e1edka1-partn, do this. 
+An **other solution** for this problem can be solved like this:
 
 ```abap
-SELECT SINGLE stcd1 FROM lfa1 INTO data(stcd1) WHERE lifnr = im_reguh-lifnr.
-ls_e1edka1-partn = stcd1+8(8).
+SELECT SINGLE stcd1 FROM lfa1 INTO data(stcd1) WHERE lifnr = 123456789.
+string = stcd1+8(8).
 ```
-
-## Classes
+`stcd1` is a 16 character field, if you want to take the rightmost 8 characters of stcd1 with `stcd1+8(8)`.
 
 ### loop group by
 
