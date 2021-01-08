@@ -144,8 +144,7 @@ lcl_loop_groupby=>create( )->run( ).
 Function modules are outdated. If you have to use one cause of implementing a BTE or something else create this function module and call a global class in it.
 **Example:**
 
-We have following function module
-
+We have following function module:
 ```abap
 FUNCTION Z_FI_EDI_PAYEXT_2441
   IMPORTING
@@ -164,6 +163,8 @@ FUNCTION Z_FI_EDI_PAYEXT_2441
   EXCEPTIONS
     DONT_CREATE_IDOC.
     
+    " place for some coding or the creation of the object and calling the method
+    
 ENDFUNCTION.
 ```
 In here we generate a new object from a global class in which our futher coding will be placed.
@@ -171,7 +172,10 @@ In here we generate a new object from a global class in which our futher coding 
 ```abap
 DATA(zcl_fi_edi_payext_2441) = NEW zcl_fi_edi_payext_2441( ).
 ```
+**Note:** Use inline declarations!
+
 Now we can call a public method of this class/object and can implement all further logic in here.
+We should put all parameters from the function module in the call of this method and made some exeption handling here.
 ```abap
 zcl_fi_edi_payext_2441->change_idoc(
     EXPORTING
@@ -197,7 +201,6 @@ zcl_fi_edi_payext_2441->change_idoc(
 The `[]` in `t_regup[]` is because we do not only want to pass the header line to the class rather then entire table.
 
 The global class can look something like this:
-
 ```abap
 CLASS zcl_fi_edi_payext_2441 DEFINITION
   PUBLIC
@@ -234,21 +237,19 @@ ENDCLASS.
 ```
 **Note:** We have to define `t_regup TYPE TABLE OF regup` and `t_edidd TYPE TABLE OF edidd.` for using them in the class.
 
-
 To make the method more readable we can use ABAP doc expressions like this:
 ```abap
-    "! <p class="shorttext synchronized">Modify payment IDOCs</p>
-    "! @exception dont_create_idoc | <p class="shorttext synchronized">Don't created a payment IDOC</p>
-    "! @parameter im_mestyp | <p class="shorttext synchronized">Message type</p>
-    "! @parameter im_reguh | <p class="shorttext synchronized">Payment data from the payment program</p>
-    "! @parameter im_regud | <p class="shorttext synchronized">Transfer data form printing</p>
-    "! @parameter im_flag_no_replace | <p class="shorttext synchronized">SPACE=Special characters conversion required in texts</p>
-    "! @parameter ex_fimsg | <p class="shorttext synchronized">FI-messages</p>
-    "! @parameter ch_xavis | <p class="shorttext synchronized">Flag: Advice required</p>
-    "! @parameter ch_edidc | <p class="shorttext synchronized">Control record (IDoc)</p>
-    "! @parameter t_regup | <p class="shorttext synchronized">Processed items from the payment program</p>
-    "! @parameter t_edidd | <p class="shorttext synchronized">Data record (IDoc)</p>
-    METHODS change_idoc
-      IMPORTING
-        im_mestyp          TYPE edidc-mestyp
+"! <p class="shorttext synchronized">Modify payment IDOCs</p>
+"! @exception dont_create_idoc | <p class="shorttext synchronized">Don't created a payment IDOC</p>
+"! @parameter im_mestyp | <p class="shorttext synchronized">Message type</p>
+"! @parameter im_reguh | <p class="shorttext synchronized">Payment data from the payment program</p>
+"! @parameter im_regud | <p class="shorttext synchronized">Transfer data form printing</p>
+"! @parameter im_flag_no_replace | <p class="shorttext synchronized">SPACE=Special characters conversion required in texts</p>
+"! @parameter ex_fimsg | <p class="shorttext synchronized">FI-messages</p>
+"! @parameter ch_xavis | <p class="shorttext synchronized">Flag: Advice required</p>
+"! @parameter ch_edidc | <p class="shorttext synchronized">Control record (IDoc)</p>
+"! @parameter t_regup | <p class="shorttext synchronized">Processed items from the payment program</p>
+"! @parameter t_edidd | <p class="shorttext synchronized">Data record (IDoc)</p>
 ```
+
+The text between those bracets (`<p class="shorttext synchronized">Here some explanation text</p>`) is also shown in SAP Gui or in the ABAP Element Info in Eclipse.
