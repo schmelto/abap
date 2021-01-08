@@ -176,7 +176,7 @@ DATA(zcl_fi_edi_payext_2441) = NEW zcl_fi_edi_payext_2441( ).
 **Note:** Use inline declarations!
 
 Now we can call a public method of this class/object and can implement all further logic in here.
-We should put all parameters from the function module in the call of this method and made some exeption handling here.
+We should put all parameters from the function module in the call of this method and made some exception handling here.
 ```abap
 zcl_fi_edi_payext_2441->change_idoc(
     EXPORTING
@@ -254,3 +254,11 @@ To make the method more readable we can use ABAP doc expressions like this:
 ```
 
 The text between those bracets (`<p class="shorttext synchronized">Here some explanation text</p>`) is also shown in SAP Gui or in the ABAP Element Info in Eclipse.
+
+Types can be documented like:
+
+```abap
+TYPES:
+   "! <p class="shorttext synchronized">Explanation text</p>
+   type TYPE TABLE OF spfli.
+```
