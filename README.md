@@ -5,6 +5,7 @@
 | shortcut | what it does |
 |----|----|
 | `str` + `1` | add ABAP Doc |
+| `str` + `shift` + `alt` | Search |
 
 ## Methods
 
