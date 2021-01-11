@@ -16,8 +16,8 @@ To get the x last characters of a string we can use following method:
 
 ```abap
 string = substring( val = string
-                          off = strlen( string ) - 8
-                          len = 8 ).
+                    off = strlen( string ) - 8
+                    len = 8 ).
 ```
 **Problem:** Invalid access to a string using negative offset when the string is shorter then the offset!
 
