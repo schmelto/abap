@@ -320,12 +320,12 @@ CLASS test IMPLEMENTATION.
 ENDCLASS.
 ```
 
-**Risk Level:**
+**Risk Level:** `... RISK LEVEL {CRITICAL|DANGEROUS|HARMLESS}`
 * CRITICAL - The test could change system settings or the Customizing, for example.
 * DANGEROUS - The test could change persistent application data, for example.
 * HARMLESS - The test has no effect on persistent data or system settings.
 
-**Execution Duration:**
+**Execution Duration:** `... DURATION {SHORT|MEDIUM|LONG}`
 * SHORT - an imperceptibly short execution duration is expected. This is the default value.
 * MEDIUM - a noticeable execution duration is expected.
 * LONG - a very noticeable execution duration is expected.
