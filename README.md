@@ -262,3 +262,63 @@ TYPES:
    "! <p class="shorttext synchronized">Explanation text</p>
    type TYPE TABLE OF spfli.
 ```
+
+## ABAP Unit Tests
+
+For ABAP Unit Tests you have to declare a testing class (`CLASS test DEFINITION`) with the additive `FOR TESTING`.
+
+Here we have an example of a normal class with two methods `set_text_to_x` and `minus_ten_percent` for wich we want to define some unit tests.
+```abap
+CLASS class DEFINITION.
+  PUBLIC SECTION.
+    CLASS-DATA text TYPE string.
+    CLASS-METHODS set_text_to_x.
+    METHODS minus_ten_percent CHANGING price TYPE p.
+ENDCLASS.
+
+CLASS class IMPLEMENTATION.
+  METHOD set_text_to_x.
+    text = 'U'. " should be 'X'
+  ENDMETHOD.
+  METHOD minus_ten_percent.
+    price = price * '0.9'.
+  ENDMETHOD.
+ENDCLASS.
+```
+
+Now we can declare a test class and tests for the two methodes above.
+
+```abap
+CLASS test DEFINITION FOR TESTING."#AU Risk_Level Harmless
+  "#AU Duration Short
+  PRIVATE SECTION.
+    METHODS test_for_x FOR TESTING.
+    METHODS test_minus_ten_percent FOR TESTING.
+ENDCLASS.
+
+CLASS test IMPLEMENTATION.
+  METHOD test_for_x.
+    class=>set_text_to_x( ).
+    cl_aunit_assert=>assert_equals( act = class=>text
+                                    exp = 'X'
+                                    msg = 'Text "' && class=>text && '" is not equals "X".').
+  ENDMETHOD.
+  METHOD test_minus_ten_percent.
+
+    DATA: price TYPE p VALUE 200.
+    DATA(class) = NEW class( ).
+
+    class->minus_ten_percent(
+      CHANGING
+        price = price
+    ).
+
+    cl_aunit_assert=>assert_equals( act = price
+                                    exp = 180
+                                    msg = 'Ninty percent not calculated correctly').
+
+  ENDMETHOD.
+ENDCLASS.
+```
+
+`"#AU Risk_Level Harmless` and `"#AU Duration Short` contain necessary technical information for testing and are required for implementing the testing class correctly.
