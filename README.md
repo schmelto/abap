@@ -26,6 +26,10 @@ To implement this in our own custom class we can use following code:
 ```abap
 CLASS helper DEFINITION.
   PUBLIC SECTION.
+    "! <p class="shorttext synchronized">Get the x last characters</p>
+    "! @parameter string | <p class="shorttext synchronized">Input string</p>
+    "! @parameter num_last_chars | <p class="shorttext synchronized">Number of digits</p>
+    "! @parameter result | <p class="shorttext synchronized">Result</p>
     METHODS
       get_x_last_chars
         IMPORTING
