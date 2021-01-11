@@ -289,8 +289,7 @@ ENDCLASS.
 Now we can declare a test class and tests for the two methodes above.
 
 ```abap
-CLASS test DEFINITION FOR TESTING."#AU Risk_Level Harmless
-  "#AU Duration Short
+CLASS test DEFINITION FOR TESTING RISK LEVEL HARMLESS DURATION SHORT.
   PRIVATE SECTION.
     METHODS test_for_x FOR TESTING.
     METHODS test_minus_ten_percent FOR TESTING.
@@ -320,5 +319,3 @@ CLASS test IMPLEMENTATION.
   ENDMETHOD.
 ENDCLASS.
 ```
-
-`"#AU Risk_Level Harmless` and `"#AU Duration Short` contain necessary technical information for testing and are required for implementing the testing class correctly.
