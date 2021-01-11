@@ -54,6 +54,20 @@ START-OF-SELECTION.
   DATA(helper) = NEW helper( ).
   string = helper->get_x_last_chars( string         = string
                                      num_last_chars = 5 ).
+
+CLASS test DEFINITION FOR TESTING RISK LEVEL HARMLESS DURATION SHORT.
+  PRIVATE SECTION.
+    METHODS: test_get_x_last_chars FOR TESTING.
+ENDCLASS.
+CLASS test IMPLEMENTATION.
+  METHOD test_get_x_last_chars.
+    DATA: string TYPE string VALUE '987654321'.
+    DATA(class) = NEW class( ).
+    cl_aunit_assert=>assert_equals( exp = '54321'
+                                    act = class->get_x_last_chars( string = string
+                                                                   num_last_chars = 5 ) ).
+  ENDMETHOD.
+ENDCLASS.
 ```
 
 Why should we define a own method?
