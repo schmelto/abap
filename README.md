@@ -54,20 +54,6 @@ START-OF-SELECTION.
   DATA(helper) = NEW helper( ).
   string = helper->get_x_last_chars( string         = string
                                      num_last_chars = 5 ).
-
-*CLASS test DEFINITION FOR TESTING RISK LEVEL HARMLESS DURATION SHORT.
-*  PRIVATE SECTION.
-*    METHODS: test_get_x_last_chars FOR TESTING.
-*ENDCLASS.
-*CLASS test IMPLEMENTATION.
-*  METHOD test_get_x_last_chars.
-*    DATA: string TYPE string VALUE '987654321'.
-*    DATA(class) = NEW class( ).
-*    cl_aunit_assert=>assert_equals( exp = '54321'
-*                                    act = class->get_x_last_chars( string = string
-*                                                                   num_last_chars = 5 ) ).
-*  ENDMETHOD.
-*ENDCLASS.
 ```
 
 Why should we define a own method?
@@ -99,6 +85,24 @@ SELECT SINGLE stcd1 FROM lfa1 INTO data(stcd1) WHERE lifnr = 123456789.
 string = stcd1+8(8).
 ```
 `stcd1` is a 16 character field, you can to take the rightmost 8 characters of stcd1 with `stcd1+8(8)` (remember 8 + 8 = 16).
+
+Unit test for this method:
+
+```abap
+CLASS test DEFINITION FOR TESTING RISK LEVEL HARMLESS DURATION SHORT.
+  PRIVATE SECTION.
+    METHODS: test_get_x_last_chars FOR TESTING.
+ENDCLASS.
+CLASS test IMPLEMENTATION.
+  METHOD test_get_x_last_chars.
+    DATA: string TYPE string VALUE '987654321'.
+    DATA(class) = NEW class( ).
+    cl_aunit_assert=>assert_equals( exp = '54321'
+                                    act = class->get_x_last_chars( string = string
+                                                                   num_last_chars = 5 ) ).
+  ENDMETHOD.
+ENDCLASS.
+```
 
 ### loop group by
 
