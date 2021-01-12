@@ -329,19 +329,15 @@ CLASS test IMPLEMENTATION.
                                     msg = 'Text "' && class=>text && '" is not equals "X".').
   ENDMETHOD.
   METHOD test_minus_ten_percent.
-
     DATA: price TYPE p VALUE 200.
     DATA(class) = NEW class( ).
-
     class->minus_ten_percent(
       CHANGING
         price = price
     ).
-
     cl_aunit_assert=>assert_equals( act = price
                                     exp = 180
                                     msg = 'Ninty percent not calculated correctly').
-
   ENDMETHOD.
 ENDCLASS.
 ```
