@@ -166,6 +166,23 @@ lcl_loop_groupby=>create( )->run( ).
 
 ```
 
+#### What's "!" in method declaration in class?
+
+**Example:**
+
+```abap
+METHODS set_item_zz_sgtxt
+    IMPORTING
+      !is_input TYPE any
+    CHANGING
+      !cs_linetype_data TYPE any.
+```
+
+**Explanation:**
+
+The exclamation mark is nothing more than a hint to the ABAP compiler.
+It is required when you want use keywords like export, exceptions and so on as formal/actual argument.
+
 ## Function Modules
 
 Function modules are outdated. If you have to use one cause of implementing a BTE or something else create this function module and call a global class in it.
