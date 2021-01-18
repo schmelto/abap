@@ -166,7 +166,7 @@ lcl_loop_groupby=>create( )->run( ).
 
 ```
 
-#### What's "!" in method declaration in class?
+#### What's "!" in method declaration?
 
 **Example:**
 
