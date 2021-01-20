@@ -10,6 +10,7 @@
 | `alt` + `str` + `arrow down` | duplicate lines |
 | `str` + `<` | Comment |
 | `str` + `>` | Undo comment |
+| `shift` + `F1` | Pretty Printer |
 
 ## Methods
 
