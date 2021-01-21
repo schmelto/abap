@@ -29,7 +29,7 @@ string = substring( val = string
 To implement this in our own custom class we can use following code:
 
 ```abap
-CLASS helper DEFINITION.
+CLASS class DEFINITION.
   PUBLIC SECTION.
     "! <p class="shorttext synchronized">Get the x last characters</p>
     "! @parameter string | <p class="shorttext synchronized">Input string</p>
@@ -44,7 +44,7 @@ CLASS helper DEFINITION.
           VALUE(result)  TYPE string.
 ENDCLASS.
 
-CLASS helper IMPLEMENTATION.
+CLASS class IMPLEMENTATION.
 
   METHOD get_x_last_chars.
     IF strlen( string ) < num_last_chars.
@@ -60,8 +60,8 @@ ENDCLASS.
 START-OF-SELECTION.
 
   DATA string TYPE string VALUE '0123456789'.
-  DATA(helper) = NEW helper( ).
-  string = helper->get_x_last_chars( string         = string
+  DATA(class) = NEW class( ).
+  string = class->get_x_last_chars( string         = string
                                      num_last_chars = 5 ).
 ```
 
