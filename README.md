@@ -62,7 +62,7 @@ START-OF-SELECTION.
   DATA string TYPE string VALUE '0123456789'.
   DATA(class) = NEW class( ).
   string = class->get_x_last_chars( string         = string
-                                     num_last_chars = 5 ).
+                                    num_last_chars = 5 ).
 ```
 
 Why should we define a own method?
