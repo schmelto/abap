@@ -80,8 +80,8 @@ FORM get_x_last_chars USING string
     cv_result = iv_string.
   ELSE.
     result = substring( val = string
-                           off = strlen( string ) - num_last_chars
-                           len = num_last_chars ).
+                        off = strlen( string ) - num_last_chars
+                        len = num_last_chars ).
   ENDIF.
 ENDFORM.
 ```
@@ -95,7 +95,7 @@ string = stcd1+8(8).
 ```
 `stcd1` is a 16 character field, you can to take the rightmost 8 characters of stcd1 with `stcd1+8(8)` (remember 8 + 8 = 16).
 
-Unit test for this method:
+**Unit test for this method:**
 
 ```abap
 CLASS test DEFINITION FOR TESTING RISK LEVEL HARMLESS DURATION SHORT.
