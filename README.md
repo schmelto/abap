@@ -379,6 +379,8 @@ ENDCLASS.
 
 ## ALV
 
+### Basic ALV Grid
+
 ```abap
 CLASS t001_alv DEFINITION.
 
