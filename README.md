@@ -294,7 +294,7 @@ CLASS zcl_fi_edi_payext_2441 IMPLEMENTATION.
   ENDMETHOD.
 ENDCLASS.
 ```
-**Note:** We have to define `t_regup TYPE TABLE OF regup` and `t_edidd TYPE TABLE OF edidd.` for using them in the class.
+**Note:** We have to define `t_regup TYPE TABLE OF regup` and `t_edidd TYPE TABLE OF edidd` for using them in the class.
 
 To make the method more readable we can use ABAP doc expressions like this:
 ```abap
@@ -421,7 +421,7 @@ DATA: t001 TYPE TABLE OF t001.
 SELECT * FROM t001 INTO TABLE t001.
 ```
 
-Now we can display the ALV Grid with the `display( )`-Function:
+Now we can display the ALV Grid with the `display( )`-function:
 
 ```abap
 alv->alv->display( ).
@@ -429,7 +429,7 @@ alv->alv->display( ).
 
 ### Basic ALV Grid
 
-Following coding shows how to display a basic ALV Grid. Further it modify some ALV-Functions and rename some columns.
+Following coding shows how to display a basic ALV Grid. Further it modify some ALV-functions and rename some columns.
 
 ```abap
 CLASS t001_alv DEFINITION.
