@@ -415,7 +415,7 @@ alv->alv->display( ).
 
 ### Basic ALV Grid
 
-Following coding shows how to display a basic ALV Grid. Further it modiify some columns and rename some columns.
+Following coding shows how to display a basic ALV Grid. Further it modify some ALV-Functions and rename some columns.
 
 ```abap
 CLASS t001_alv DEFINITION.
