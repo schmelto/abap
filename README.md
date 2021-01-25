@@ -12,8 +12,22 @@
 | `str` + `>` | Undo comment |
 | `shift` + `F1` | Pretty Printer |
 
-## Methods
+## DATA and Types
 
+### Use inline declaration
+
+This: 
+```abap
+DATA(name) = 'something'.
+```
+is better than this:
+```abap
+" anti-pattern
+DATA: name Type string.
+name = 'something'.
+```
+
+## Methods
 
 ### Get X last characters of a string
 
