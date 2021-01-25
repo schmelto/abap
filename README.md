@@ -400,14 +400,14 @@ TRY.
     cl_demo_output=>display( msg ).
 ENDTRY.
 ```
-Of course we havt to fill the t001 first of all with some data.
+Of course we have to fill the t001 first with some data.
 
 ```abap
 DATA: t001 TYPE TABLE OF t001.
 SELECT * FROM t001 INTO TABLE t001.
 ```
 
-Now we can display the alv grid with the `display( )`-Function:
+Now we can display the ALV Grid with the `display( )`-Function:
 
 ```abap
 alv->alv->display( ).
