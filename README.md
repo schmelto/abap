@@ -226,7 +226,7 @@ FUNCTION Z_FI_EDI_PAYEXT_2441
     
 ENDFUNCTION.
 ```
-In here we generate a new object from a global class in which our futher coding will be placed.
+In here we generate a new object from a global class in which our further coding will be placed.
 
 ```abap
 DATA(zcl_fi_edi_payext_2441) = NEW zcl_fi_edi_payext_2441( ).
