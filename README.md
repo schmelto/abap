@@ -204,25 +204,26 @@ Function modules are outdated. If you have to use one cause of implementing a BT
 **Example:**
 
 We have following function module:
+
 ```abap
-FUNCTION Z_FI_EDI_PAYEXT_2441
+FUNCTION z_fi_edi_payext_2441
   IMPORTING
-    IM_MESTYP LIKE EDIDC-MESTYP
-    IM_REGUH LIKE REGUH
-    IM_REGUD LIKE REGUD
-    IM_FLAG_NO_REPLACE TYPE C
+    im_mestyp LIKE edidc-mestyp
+    im_reguh LIKE reguh
+    im_regud LIKE regud
+    im_flag_no_replace TYPE c
   EXPORTING
-    EX_FIMSG LIKE FIMSG
+    ex_fimsg LIKE fimsg
   CHANGING
-    CH_XAVIS TYPE C
-    CH_EDIDC LIKE EDIDC
+    ch_xavis TYPE c
+    ch_edidc LIKE edidc
   TABLES
-    T_REGUP LIKE REGUP
-    T_EDIDD LIKE EDIDD
+    t_regup LIKE regup
+    t_edidd LIKE edidd
   EXCEPTIONS
-    DONT_CREATE_IDOC.
+    dont_create_idoc.
     
-    " place for some coding or the creation of the object and calling the method
+    " place for some coding
     
 ENDFUNCTION.
 ```
