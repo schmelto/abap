@@ -498,25 +498,31 @@ START-OF-SELECTION.
 
 CLASS test DEFINITION FOR TESTING RISK LEVEL HARMLESS DURATION SHORT.
   PRIVATE SECTION.
-    DATA: class type ref to class.
+    DATA: class TYPE REF TO class.
 
-    Methods: setup.
-    Methods: verify
-        IMPORTING
-            input type string
-            num_last_chars type i
-            expected type string.
+    METHODS: "! <p class="shorttext synchronized">setup testing class</p>
+             setup.
+    METHODS: "! <p class="shorttext synchronized">verify inputs from testing method</p>
+             "! @parameter input | Input String
+             "! @parameter num_last_chars | Number of characters
+             "! @parameter expected | Expected Output
+             verify
+      IMPORTING
+        input          TYPE string
+        num_last_chars TYPE i
+        expected       TYPE string.
 
-    METHODS: test_get_x_last_chars FOR TESTING.
+    METHODS: "! <p class="shorttext synchronized">Test method for getting x last characters</p>
+             test_get_x_last_chars FOR TESTING.
 
 ENDCLASS.
 CLASS test IMPLEMENTATION.
 
-    Method setup.
-        class = new class( ).
-    ENDMETHOD.
+  METHOD setup.
+    class = NEW class( ).
+  ENDMETHOD.
 
-  Method verify.
+  METHOD verify.
     cl_aunit_assert=>assert_equals( exp = expected
                                     act = class->get_x_last_chars( string         = input
                                                                    num_last_chars = num_last_chars ) ).
@@ -524,7 +530,7 @@ CLASS test IMPLEMENTATION.
 
   METHOD test_get_x_last_chars.
     verify( input = '123'     num_last_chars = 5 expected = '123' ).
-    verify( input = '1234567' num_last_chars = 5 expected = '34567' ).
+    verify( input = '1234567' num_last_chars = 6 expected = '234567' ).
     verify( input = '1'       num_last_chars = 8 expected = '1' ).
     verify( input = '12345'   num_last_chars = 5 expected = '12345' ).
   ENDMETHOD.
