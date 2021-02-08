@@ -341,6 +341,8 @@ Example:
 
 ### Test Relations
 
+The following syntax can be used to define so called test relations in front of the declaration of a test class or a test method:
+
 ```abap
 "! @testing [kind:]name
 ```
