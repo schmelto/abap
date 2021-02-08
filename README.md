@@ -121,7 +121,7 @@ CLASS test IMPLEMENTATION.
     DATA: string TYPE string VALUE '987654321'.
     DATA(class) = NEW class( ).
     cl_aunit_assert=>assert_equals( exp = '54321'
-                                    act = class->get_x_last_chars( string = string
+                                    act = class->get_x_last_chars( string         = string
                                                                    num_last_chars = 5 ) ).
   ENDMETHOD.
 ENDCLASS.
