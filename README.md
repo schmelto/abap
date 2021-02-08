@@ -258,7 +258,7 @@ zcl_fi_edi_payext_2441->change_idoc(
     RAISE dont_create_idoc.
   ENDIF.
 ```
-The `[]` in `t_regup[]` is because we do not only want to pass the header line to the class rather then entire table.
+The `[]` in `t_regup[]` is because we do not only want to pass the header line to the class rather then the entire table.
 
 The global class can look something like this:
 ```abap
