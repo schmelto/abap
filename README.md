@@ -297,7 +297,9 @@ ENDCLASS.
 ```
 **Note:** We have to define `t_regup TYPE TABLE OF regup` and `t_edidd TYPE TABLE OF edidd` for using them in the class.
 
-To make the method more readable we can use ABAP doc expressions like this:
+## ABAP Docs
+
+To make the method more readable we can use ABAP Doc expressions like this:
 ```abap
 "! <p class="shorttext synchronized">Modify payment IDOCs</p>
 "! @exception dont_create_idoc | <p class="shorttext synchronized">Don't created a payment IDOC</p>
@@ -312,14 +314,40 @@ To make the method more readable we can use ABAP doc expressions like this:
 "! @parameter t_edidd | <p class="shorttext synchronized">Data record (IDoc)</p>
 ```
 
-The text between those bracets (`<p class="shorttext synchronized">Here some explanation text</p>`) is also shown in SAP Gui or in the ABAP Element Info in Eclipse.
-
 Types can be documented like:
 
 ```abap
 TYPES:
    "! <p class="shorttext synchronized">Explanation text</p>
    type TYPE TABLE OF spfli.
+```
+
+### Short Texts and Their Synchronization
+
+The text between those bracets (`<p class="shorttext synchronized">Here some explanation text</p>`) is also shown in SAP GUI or in the ABAP Element Info in Eclipse.
+
+### Documentation Links
+
+In an ABAP Doc comment, the following syntax can be used to refer to the documentation of other repository objects:
+
+```abap
+... {@link [[[kind:]name.]...][kind:]name} ...
+```
+
+Example:
+```abap
+"! {@link PROG:z_test.class.METH:get_x_last_chars}
+```
+
+### Test Relations
+
+```abap
+"! @testing [kind:]name
+```
+
+Example:
+```abap
+"! @testing PROG:z_test.class.METH:get_x_last_chars
 ```
 
 ## ABAP Unit Tests
