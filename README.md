@@ -349,7 +349,7 @@ The following syntax can be used to define so called test relations in front of 
 
 Example:
 ```abap
-"! @testing PROG:z_test.class.METH:get_x_last_chars
+"! @testing my_cds_view
 ```
 
 ## ABAP Unit Tests
