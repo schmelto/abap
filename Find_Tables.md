@@ -1,6 +1,11 @@
 
 ## How to find the Table that stores multiple Field values?
 
+![image](https://user-images.githubusercontent.com/30869493/109816607-3935c900-7c31-11eb-80e1-d25cb74ff6fd.png)
+
+![image](https://user-images.githubusercontent.com/30869493/109816742-5b2f4b80-7c31-11eb-8fdb-3b614acd080a.png)
+
+
 ```abap
 TABLES: DD03L,
         BOOLE.
