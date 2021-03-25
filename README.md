@@ -699,38 +699,38 @@ t001_alv->display_t001_data( ).
 ```abap
 REPORT z_change_langu.
 
-DATA: gs_server TYPE          msxxlist,
-      gt_server TYPE TABLE OF msxxlist.
+DATA: server  TYPE          msxxlist,
+      servers TYPE TABLE OF msxxlist.
 
-PARAMETERS: p_langu LIKE sy-langu MATCHCODE OBJECT h_t002
+PARAMETERS: language LIKE sy-langu MATCHCODE OBJECT h_t002
                                   OBLIGATORY
                                   DEFAULT sy-langu.
 
 START-OF-SELECTION.
 
 * initialize internal table for server list 
-  CLEAR: gt_server[].
+  CLEAR: servers[].
 
 * get server list
   CALL FUNCTION 'TH_SERVER_LIST'
     TABLES
-      list           = gt_server
+      list           = servers
     EXCEPTIONS
       no_server_list = 1
       OTHERS         = 2.
 
 * process server list
-  LOOP AT gt_server INTO  gs_server
+  LOOP AT servers INTO  server
                     WHERE host = sy-host.
 
 * set new language
-    SET LOCALE LANGUAGE p_langu.
+    SET LOCALE LANGUAGE language.
 
 * start remote transaction
     CALL FUNCTION 'TH_REMOTE_TRANSACTION'
       EXPORTING
         tcode = space
-        dest  = gs_server-name.
+        dest  = server-name.
 
 * exit loop
     EXIT.
