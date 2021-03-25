@@ -694,4 +694,50 @@ t001_alv->get_all_t001_data( ).
 t001_alv->display_t001_data( ).
 ```
 
+## Sample Programs
+
+```abap
+REPORT z_change_langu.
+
+DATA: gs_server TYPE          msxxlist,
+      gt_server TYPE TABLE OF msxxlist.
+
+PARAMETERS: p_langu LIKE sy-langu MATCHCODE OBJECT h_t002
+                                  OBLIGATORY
+                                  DEFAULT sy-langu.
+
+START-OF-SELECTION.
+
+* initialize internal table for server list 
+  CLEAR: gt_server[].
+
+* get server list
+  CALL FUNCTION 'TH_SERVER_LIST'
+    TABLES
+      list           = gt_server
+    EXCEPTIONS
+      no_server_list = 1
+      OTHERS         = 2.
+
+* process server list
+  LOOP AT gt_server INTO  gs_server
+                    WHERE host = sy-host.
+
+* set new language
+    SET LOCALE LANGUAGE p_langu.
+
+* start remote transaction
+    CALL FUNCTION 'TH_REMOTE_TRANSACTION'
+      EXPORTING
+        tcode = space
+        dest  = gs_server-name.
+
+* exit loop
+    EXIT.
+
+  ENDLOOP.
+
+* leave program
+  LEAVE PROGRAM.
+```
 
