@@ -1,0 +1,17 @@
+name: lint
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: abaplint
+      uses: abaplint/actions-abaplint@main
+
+      if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}       
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
