@@ -696,6 +696,8 @@ t001_alv->display_t001_data( ).
 
 ## Sample Programs
 
+### Change Language without new Login to SAP GUI
+
 ```abap
 REPORT z_change_langu.
 
