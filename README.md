@@ -751,9 +751,6 @@ START-OF-SELECTION.
 
 
 
-
-
-
 # SAP
 
 ## SAP Gui Shortcuts
@@ -761,6 +758,8 @@ START-OF-SELECTION.
 | shortcut | what it does |
 |----|----|
 | `str` + `shift` + `7` | focus on execution bar |
+| `str` + `N` | open new window |
+| `str` + `Y` | mark in SAP Gui |
 
 ## Transaction (prefix)
 
