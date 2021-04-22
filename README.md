@@ -748,3 +748,16 @@ START-OF-SELECTION.
 | Programm | Transaction |
 |----------|-------------|
 | ABAP Search | `code_scanner` |
+
+
+
+
+
+
+# SAP
+
+## SAP Gui Shortcuts
+
+| shortcut | what it does |
+|----|----|
+| `str` + `shift` + `7` | focus on execution bar |
