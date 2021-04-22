@@ -761,3 +761,21 @@ START-OF-SELECTION.
 | shortcut | what it does |
 |----|----|
 | `str` + `shift` + `7` | focus on execution bar |
+
+## Transaction (prefix)
+
+| shortcut | what it does |
+|----|----|
+| `/n` | execute transaction in current window |
+| `/o` | execute transaction in a new window |
+| `/i` | closes the current window |
+| `/nex` | closses all windows and log off from the SAP System |
+| `/*` | execute transaction with history data |
+| `SEARCH_SAP_MENU` | search though the SAP Menu |
+
+
+
+## SAP Tables
+| table | what it does |
+|----|----|
+| TSTC | all transactions with explanation text |
