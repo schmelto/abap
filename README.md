@@ -567,6 +567,11 @@ CLASS test IMPLEMENTATION.
 ENDCLASS.
 ```
 
+### How to implement Unit Tests to a global Class in Eclipse?
+
+Declare Test Classes: 
+![image](https://user-images.githubusercontent.com/30869493/116395736-cc037600-a824-11eb-88cb-d40260edc36a.png)
+
 
 ## ALV - ABAP List Viewer
 
