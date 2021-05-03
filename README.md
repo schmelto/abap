@@ -763,8 +763,8 @@ START-OF-SELECTION.
 | shortcut | what it does |
 |----|----|
 | `str` + `shift` + `7` | focus on execution bar |
-| `str` + `N` | open new window |
-| `str` + `Y` | mark in SAP Gui |
+| `str` + `n` | open new window |
+| `str` + `y` | mark in SAP Gui |
 
 ## Transaction (prefix)
 
