@@ -11,6 +11,7 @@
 | `str` + `<` | Comment |
 | `str` + `>` | Undo comment |
 | `shift` + `F1` | Pretty Printer |
+| `str` + `h` | Abap Source Text Search |
 
 ## DATA and Types
 
