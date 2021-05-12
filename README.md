@@ -573,7 +573,6 @@ ENDCLASS.
 Declare Test Classes: 
 ![image](https://user-images.githubusercontent.com/30869493/116395736-cc037600-a824-11eb-88cb-d40260edc36a.png)
 
-
 ## ALV - ABAP List Viewer
 
 ### Basic ALV Functions
@@ -582,6 +581,12 @@ To define a new ALV Grid you can use the type `cl_salv_table`.
 
 ```abap
 DATA: alv TYPE REF TO cl_salv_table.
+```
+
+Of course we need some data to display something. In this case we selection enteries from table t001.
+
+```abap
+SELECT * FROM t001 INTO TABLE @DATA(t001).
 ```
 
 To fill the ALV Grid with data we can use following coding:
@@ -596,12 +601,6 @@ TRY.
   CATCH cx_salv_msg INTO DATA(msg).
     cl_demo_output=>display( msg ).
 ENDTRY.
-```
-Of course we have to fill the t001 first with some data.
-
-```abap
-DATA: t001 TYPE TABLE OF t001.
-SELECT * FROM t001 INTO TABLE t001.
 ```
 
 Now we can display the ALV Grid with the `display( )`-function:
@@ -754,8 +753,6 @@ START-OF-SELECTION.
 | Programm | Transaction |
 |----------|-------------|
 | ABAP Search | `code_scanner` |
-
-
 
 # SAP
 
