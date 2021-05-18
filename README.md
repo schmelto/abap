@@ -28,6 +28,8 @@ DATA: name Type string.
 name = 'something'.
 ```
 
+but unfortunately not always applicable...
+
 ## Methods
 
 ### Get X last characters of a string
