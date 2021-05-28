@@ -608,7 +608,7 @@ ENDTRY.
 Now we can display the ALV Grid with the `display( )`-function:
 
 ```abap
-alv->alv->display( ).
+alv->display( ).
 ```
 
 ### Basic ALV Grid
