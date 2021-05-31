@@ -325,7 +325,7 @@ TYPES:
    type TYPE TABLE OF spfli.
 ```
 
-### Short Texts and Their Synchronization
+### Short Texts and their Synchronization
 
 The text between those bracets (`<p class="shorttext synchronized">Here some explanation text</p>`) is also shown in SAP GUI or in the ABAP Element Info in Eclipse.
 
