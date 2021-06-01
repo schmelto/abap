@@ -782,4 +782,5 @@ START-OF-SELECTION.
 ## SAP Tables
 | table | what it does |
 |----|----|
+| T001 | company codes |
 | TSTC | all transactions with explanation text |
