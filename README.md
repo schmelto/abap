@@ -775,8 +775,9 @@ START-OF-SELECTION.
 | `/i` | closes the current window |
 | `/nex` | closses all windows and log off from the SAP System |
 | `/*` | execute transaction with history data |
+| `ANST` | Find all the Enhancements that are Implemented for a Transaction Code in SAP |
+| `CODE_SCANNER` | Check for Code |
 | `SEARCH_SAP_MENU` | search though the SAP Menu |
-
 
 
 ## SAP Tables
