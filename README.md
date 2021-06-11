@@ -750,12 +750,6 @@ START-OF-SELECTION.
   LEAVE PROGRAM.
 ```
 
-## Useful Programms
-
-| Programm | Transaction |
-|----------|-------------|
-| ABAP Search | `code_scanner` |
-
 # SAP
 
 ## SAP Gui Shortcuts
