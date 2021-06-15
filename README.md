@@ -771,6 +771,7 @@ START-OF-SELECTION.
 | `/*` | execute transaction with history data |
 | `ANST` | Find all the Enhancements that are Implemented for a Transaction Code in SAP |
 | `CODE_SCANNER` | Check for Code |
+| `SAT` | Runtime Analysis |
 | `SEARCH_SAP_MENU` | search though the SAP Menu |
 
 
