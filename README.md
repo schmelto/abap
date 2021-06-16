@@ -780,3 +780,29 @@ START-OF-SELECTION.
 |----|----|
 | T001 | company codes |
 | TSTC | all transactions with explanation text |
+
+## Edit SAP Table entries
+
+### SE16
+
+- run transaction `SE16`
+- Enter Table
+- Fill selection screen -> `F8`
+- Select Table entries
+- "View" with the glasses
+- start debugger with `/h` in command line
+- click in the relevant field and hit `ENTER`
+- Aktivate Variables
+  - EDIT -> Modify line
+  - INSR -> Insert line
+  - DELE -> Delete line
+
+### SE16N
+
+- run trasaction `SE16N`
+- Enter Table
+- `/h`
+- in the variables fill variables and edit with the pen icon the value to `x`
+  - gd-edit -> x
+  - gd-sapedit -> x
+- `ENTER` -> `F8`
