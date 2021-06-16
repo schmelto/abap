@@ -802,7 +802,7 @@ START-OF-SELECTION.
 - run trasaction `SE16N`
 - Enter Table
 - `/h`
-- in the variables fill variables and edit with the pen icon the value to `x`
+- in the variables fill variables and change the value to `x` with the pen icon
   - gd-edit -> x
   - gd-sapedit -> x
 - `ENTER` -> `F8`
