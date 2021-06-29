@@ -750,6 +750,87 @@ START-OF-SELECTION.
   LEAVE PROGRAM.
 ```
 
+## Sample Classes
+
+### Check for System ID / System
+
+```abap
+CLASS zcl_bc_sysid_tools DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    "! <p class="shorttext synchronized">SYSID PS4 (Productive)</p>
+    CONSTANTS sysid_ps4 TYPE syst_sysid VALUE 'PS4' ##NO_TEXT.
+
+    "! <p class="shorttext synchronized">SYSID TS4 (Test)</p>
+    CONSTANTS sysid_ts4 TYPE syst_sysid VALUE 'TS4' ##NO_TEXT.
+
+    "! <p class="shorttext synchronized">SYSID DS4 (Development)</p>
+    CONSTANTS sysid_ds4 TYPE syst_sysid VALUE 'DS4' ##NO_TEXT.
+
+
+    CLASS-METHODS:
+      "! <p class="shorttext synchronized">Returns, if system is productive system</p>
+      "! @parameter i_sysid | <p class="shorttext synchronized">System ID</p>
+      "! @parameter r_productive | <p class="shorttext synchronized">Is productive system?</p>
+      is_productive_system
+        IMPORTING
+          i_sysid             TYPE syst_sysid DEFAULT sy-sysid
+        RETURNING
+          VALUE(r_productive) TYPE abap_bool.
+
+    CLASS-METHODS:
+      "! <p class="shorttext synchronized">Returns, if system is test system</p>
+      "! @parameter i_sysid | <p class="shorttext synchronized">System ID</p>
+      "! @parameter r_test | <p class="shorttext synchronized">Is test system?</p>
+      is_test_system
+        IMPORTING
+          i_sysid       TYPE syst_sysid DEFAULT sy-sysid
+        RETURNING
+          VALUE(r_test) TYPE abap_bool.
+
+    CLASS-METHODS:
+      "! <p class="shorttext synchronized">Returns, if system is development system</p>
+      "! @parameter i_sysid | <p class="shorttext synchronized">System ID</p>
+      "! @parameter r_development | <p class="shorttext synchronized">Is development system?</p>
+      is_development_system
+        IMPORTING
+          i_sysid              TYPE syst_sysid DEFAULT sy-sysid
+        RETURNING
+          VALUE(r_development) TYPE abap_bool.
+
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zcl_bc_sysid_tools IMPLEMENTATION.
+
+  METHOD is_productive_system.
+
+    r_productive = xsdbool( i_sysid = sysid_ps4 ).
+
+  ENDMETHOD. "is_productive_system
+
+
+  METHOD is_test_system.
+
+    r_test = xsdbool( i_sysid = sysid_ts4 ).
+
+  ENDMETHOD. "is_test_system
+
+
+  METHOD is_development_system.
+
+    r_development = xsdbool( i_sysid = sysid_ds4 ).
+
+  ENDMETHOD. "is_development_system
+
+ENDCLASS.
+```
+
 # SAP
 
 ## SAP Gui Shortcuts
