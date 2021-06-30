@@ -831,6 +831,8 @@ CLASS zcl_bc_sysid_tools IMPLEMENTATION.
 ENDCLASS.
 ```
 
+> **Note:** `##NO_TEXT` is a pragmas for hiding warnings
+
 # SAP
 
 ## SAP Gui Shortcuts
