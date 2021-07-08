@@ -888,4 +888,14 @@ ENDCLASS.
 - in the variables fill variables and change the value to `x` with the pen icon
   - gd-edit -> x
   - gd-sapedit -> x
+  
+  ![se16h sap edit](https://user-images.githubusercontent.com/30869493/124891864-a7243f80-dfd9-11eb-888e-fcdc9511a155.png)
+
 - `ENTER` -> `F8`
+
+## Debug Payment Run
+
+1. Set a Break-Point in the Programm / Function module
+2. Start the Payment Proposal Run in F110 without "Start immediately", for example using start time 12pm
+3. go to the Job Overview page using transaction `SM37` / `SMX` -> mark the F110 Job -> enter JDBG in the execution bar, this will start the Job
+4. It should stop at the Break-Point
