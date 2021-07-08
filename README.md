@@ -889,7 +889,8 @@ ENDCLASS.
   - gd-edit -> x
   - gd-sapedit -> x
   
-  ![se16h sap edit](https://user-images.githubusercontent.com/30869493/124891864-a7243f80-dfd9-11eb-888e-fcdc9511a155.png)
+  ![se16n debugger variables](https://user-images.githubusercontent.com/30869493/124892270-041ff580-dfda-11eb-81c8-fa1359b1bba4.png)
+
 
 - `ENTER` -> `F8`
 
