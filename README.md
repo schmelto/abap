@@ -856,6 +856,7 @@ ENDCLASS.
 | `CODE_SCANNER` | Check for Code |
 | `SAT` | Runtime Analysis |
 | `SEARCH_SAP_MENU` | search though the SAP Menu |
+| `STMS` | Transport Management System (check if a transport went into the system) |
 
 
 ## SAP Tables
