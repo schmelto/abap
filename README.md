@@ -883,7 +883,7 @@ ENDCLASS.
 
 ### SE16N
 
-- run trasaction `SE16N`
+- run transaction `SE16N`
 - Enter Table
 - `/h`
 - in the variables fill variables and change the value to `x` with the pen icon
@@ -896,7 +896,7 @@ ENDCLASS.
 
 ## Transport SAP Table entries
 
-- run trasaction `SE37`
+- run transaction `SE37`
 - Execute Function Module `SE16N_INTERFACE`
   - I_TAB -> set table
 	- I_EDIT -> x
