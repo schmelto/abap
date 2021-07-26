@@ -892,8 +892,21 @@ ENDCLASS.
   
   ![se16n debugger variables](https://user-images.githubusercontent.com/30869493/124892270-041ff580-dfda-11eb-81c8-fa1359b1bba4.png)
 
-
 - `ENTER` -> `F8`
+
+## Transport SAP Table entries
+
+- run trasaction `SE37`
+- Execute Function Module `SE16N_INTERFACE`
+  - I_TAB -> set table
+	- I_EDIT -> x
+	- I_SAPEDIT -> x
+  - I_DISPLAY-> x
+- `ENTER` -> `F8`
+
+Select the enteries you want to transport
+-> `Table Entry` -> `Tranport`
+![image](https://user-images.githubusercontent.com/30869493/126965425-8a5e7477-4f25-46a8-ae55-2825a648a473.png)
 
 ## Debug Payment Run
 
