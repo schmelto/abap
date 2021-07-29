@@ -13,6 +13,8 @@
 | `shift` + `F1` | Pretty Printer |
 | `str` + `h` | Abap Source Text Search |
 
+-> more shortcuts can be found [here](https://blogs.sap.com/2021/07/16/abap-adt-frequently-used-short-cuts/?utm_campaign=ABAPWeekly&utm_medium=email&utm_source=ABAPWeekly_50)
+
 ## DATA and Types
 
 ### Use inline declaration
