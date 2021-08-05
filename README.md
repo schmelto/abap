@@ -864,8 +864,9 @@ ENDCLASS.
 ## SAP Tables
 | table | what it does |
 |----|----|
-| T001 | company codes |
-| TSTC | all transactions with explanation text |
+| ABLM_BLACKLIST | Blacklist Items of Executables from Applicaitons |
+| T001 | Company Codes |
+| TSTC | SAP Transaction Codes |
 
 ## Edit SAP Table entries
 
