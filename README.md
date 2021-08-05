@@ -865,6 +865,7 @@ ENDCLASS.
 | table | what it does |
 |----|----|
 | ABLM_BLACKLIST | Blacklist Items of Executables from Applicaitons |
+| ACDOCA | Universal Journal Entry Line Items |
 | T001 | Company Codes |
 | TSTC | SAP Transaction Codes |
 
