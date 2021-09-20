@@ -835,6 +835,15 @@ ENDCLASS.
 
 > **Note:** `##NO_TEXT` is a pragmas for hiding warnings
 
+### ABAP Hot Expresions
+
+```abap
+SELECT *
+ FROM scarr
+ WHERE carrid <> @( VALUE #( ) )
+ INTO TABLE @DATA(result).
+```
+
 ## Sample Functions
 
 This fucntion will popup an alert window for a given User with a given text.
