@@ -752,6 +752,14 @@ START-OF-SELECTION.
   LEAVE PROGRAM.
 ```
 
+### ABAP Extended Expressions
+
+* Run transaction `SE38`
+* `DEMO_EXPRESSIONS` -> `F8`
+
+![DEMO_EXPRESSIONS](https://user-images.githubusercontent.com/30869493/133969858-3037542b-f9d4-45bf-948b-164281b7c712.png)
+
+
 ## Sample Classes
 
 ### Check for System ID / System
