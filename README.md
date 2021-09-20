@@ -918,3 +918,10 @@ Select the enteries you want to transport
 2. Start the Payment Proposal Run in F110 without "Start immediately", for example using start time 12pm
 3. go to the Job Overview page using transaction `SM37` / `SMX` -> mark the F110 Job -> enter JDBG in the execution bar, this will start the Job
 4. It should stop at the Break-Point
+
+## Find BADIs for an excuted transaction -> `CL_EXITHANDLER`
+
+* Go to transaction `SE80` Class `CL_EXITHANDLER`
+* navigate to method `get_instance` and set a Break-Point in the first line of `cl_exithandler=>get_class_name_by_interface`
+* Use the transaction in which you are BAdI-hunting
+* Examine the contents of the field exit_name whenever the processing stops at the breakpoint. I have found a case where exit_name was an unknown field. Then class_name gave a good clue to the name of the BAdI.
