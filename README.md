@@ -897,6 +897,7 @@ ENDIF.
 | `/*` | execute transaction with history data |
 | `ANST` | Find all the Enhancements that are Implemented for a Transaction Code in SAP |
 | `CODE_SCANNER` | Check for Code |
+| `S_BCE_68001398` | Check wether a user have authorization to use a transaction or not |
 | `SAT` | Runtime Analysis |
 | `SEARCH_SAP_MENU` | search though the SAP Menu |
 | `STMS` | Transport Management System (check if a transport went into the system) |
