@@ -835,6 +835,30 @@ ENDCLASS.
 
 > **Note:** `##NO_TEXT` is a pragmas for hiding warnings
 
+## Sample Functions
+
+This fucntion will popup an alert window for a given User with a given text.
+
+![TH_POPUP](https://user-images.githubusercontent.com/30869493/133611044-1bc87866-5289-4e19-8c7c-8edd9adcecb7.png)
+
+```abap
+CALL FUNCTION 'TH_POPUP'
+  EXPORTING
+    client         = 
+    user           = 
+    message        = 
+*    message_len    = 0
+*    cut_blanks     = ' '
+*  EXCEPTIONS
+*    user_not_found = 1
+*    others         = 2
+  .
+IF SY-SUBRC <> 0.
+*  MESSAGE ID SY-MSGID TYPE SY-MSGTY NUMBER SY-MSGNO
+*  WITH SY-MSGV1 SY-MSGV2 SY-MSGV3 SY-MSGV4.
+ENDIF.
+```
+
 # SAP
 
 ## SAP Gui Shortcuts
