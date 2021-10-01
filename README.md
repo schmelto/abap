@@ -854,7 +854,7 @@ SELECT *
 
 ## Sample Functions
 
-This fucntion will popup an alert window for a given User with a given text.
+This function will popup an alert window for a given User with a given text.
 
 ![TH_POPUP](https://user-images.githubusercontent.com/30869493/133611044-1bc87866-5289-4e19-8c7c-8edd9adcecb7.png)
 
