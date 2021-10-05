@@ -728,9 +728,7 @@ zcl_tutorial_simple_daemon=>stop( iv_daemon_name = 'simple_daemon' ).
 
 You can monitor all running ABAP Daemons using transaction `SMDAEMON` in SAPGUI. There you can see their state, check for errors, and also restart and terminate them.
 
-To stop your daemon, select it from the list and go to `ABAP Daemon` > `Terminate Daemon`.
-
-Alternatively, you can also create a static STOP method. Therefore, add this to the PUBLIC SECTION of your class definition.
+To stop your daemon, select it from the list and go to `ABAP Daemon` > `Terminate Daemon`. Alternatively, you can also create a static STOP method.
 
 ## Sample Programs
 
