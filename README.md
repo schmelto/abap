@@ -888,7 +888,7 @@ ENDIF.
 | `str` + `n` | open new window |
 | `str` + `y` | mark in SAP Gui |
 
-## Transaction (prefix)
+## Transactions (prefix)
 
 | shortcut | what it does |
 |----|----|
@@ -904,6 +904,13 @@ ENDIF.
 | `SEARCH_SAP_MENU` | search though the SAP Menu |
 | `SM04` | End User Sessions |
 | `STMS` | Transport Management System (check if a transport went into the system) |
+
+## Customizing transactions (prefix)
+
+| shortcut | what it does |
+|----|----|
+| `FBMP` | Dunning |
+| `FBZP` | Payment run |
 
 ## SAP Tables
 | table | what it does |
