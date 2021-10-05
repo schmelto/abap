@@ -705,6 +705,12 @@ t001_alv->get_all_t001_data( ).
 t001_alv->display_t001_data( ).
 ```
 
+## ABAP daemon
+
+A daemon is a utility program that runs continuously by itself and without the control of an interactive user on a multi-tasking operating system in the background to monitor and take care of certain subsystems or show immediate reaction to events. Daemons perform explicit actions at predefined times or in response to certain events.
+
+
+
 ## Sample Programs
 
 ### Change Language without new Login to SAP GUI
