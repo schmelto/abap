@@ -6,14 +6,15 @@
 
 | shortcut | what it does |
 |----|----|
-| `str` + `1` | add ABAP Doc |
-| `str` + `shift` + `alt` | Search |
 | `alt` + `shift` + `A` | Eclipse Box Selection |
 | `alt` + `str` + `arrow down` | duplicate lines |
+| `shift` + `F1` | Pretty Printer |
+| `str` + `1` | Opens Quickfix/Quickassist Dialog on the selected element |
+| `str` + `h` | Abap Source Text Search |
+| `str` + `shift` + `alt` | Search |
+| `str` + `shift` + `L` | List all available Keybord-Shortcuts |
 | `str` + `<` | Comment |
 | `str` + `>` | Undo comment |
-| `shift` + `F1` | Pretty Printer |
-| `str` + `h` | Abap Source Text Search |
 
 -> more shortcuts can be found [here](https://blogs.sap.com/2021/07/16/abap-adt-frequently-used-short-cuts/?utm_campaign=ABAPWeekly&utm_medium=email&utm_source=ABAPWeekly_50)
 
