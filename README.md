@@ -10,7 +10,7 @@
 | `alt` + `str` + `arrow down` | duplicate lines |
 | `shift` + `F1` | Pretty Printer |
 | `str` + `1` | Opens Quickfix/Quickassist Dialog on the selected element |
-| `str` + `h` | Abap Source Text Search |
+| `str` + `H` | Abap Source Text Search |
 | `str` + `shift` + `alt` | Search |
 | `str` + `shift` + `L` | List all available Keybord-Shortcuts |
 | `str` + `<` | Comment |
