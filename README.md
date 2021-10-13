@@ -8,7 +8,7 @@
 |----|----|
 | `alt` + `shift` + `A` | Eclipse Box Selection |
 | `alt` + `str` + `arrow down` | duplicate lines |
-| `alt` + `u` | delete unused variables |
+| `alt` + `U` | delete unused variables |
 | `shift` + `F1` | Pretty Printer |
 | `str` + `1` | Opens Quickfix/Quickassist Dialog on the selected element |
 | `str` + `H` | Abap Source Text Search |
