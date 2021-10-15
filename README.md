@@ -928,6 +928,7 @@ ENDIF.
 | `CODE_SCANNER` | Check for Code |
 | `S_BCE_68001398` | Check wether a user have authorization to use a transaction or not |
 | `SAT` | Runtime Analysis |
+| `SE93` | Maintain transactions |
 | `SEARCH_SAP_MENU` | search though the SAP Menu |
 | `SM04` | End User Sessions |
 | `STMS` | Transport Management System (check if a transport went into the system) |
@@ -936,8 +937,10 @@ ENDIF.
 
 | shortcut | what it does |
 |----|----|
+| `OBB8` | Maintain Payment terms |
 | `FBMP` | Dunning |
 | `FBZP` | Payment run |
+| `VKOA` | Accountfinding |
 
 ## SAP Tables
 | table | what it does |
