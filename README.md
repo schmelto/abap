@@ -7,7 +7,7 @@
 | shortcut | what it does |
 |----|----|
 | `alt` + `shift` + `A` | Eclipse Box Selection |
-| `alt` + `str` + `arrow down` | duplicate lines |
+| `alt` + `str` + &#8595; | duplicate lines |
 | `alt` + `U` | delete unused variables |
 | `shift` + `F1` | Pretty Printer |
 | `str` + `1` | Opens Quickfix/Quickassist Dialog on the selected element |
