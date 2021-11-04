@@ -12,6 +12,10 @@
 "   Info: 
 ```
 
+## Maintain Text Elements
+
+![image](https://user-images.githubusercontent.com/30869493/128341169-e12e0512-5fcb-44ac-bf31-e7143faa9876.png)
+
 ## eclipse-abap-keywordcolors
 
 ABAP Keyword Colors -> Import -> .xml
