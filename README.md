@@ -781,6 +781,59 @@ START-OF-SELECTION.
   LEAVE PROGRAM.
 ```
 
+### Credit Management in S/4HANA
+
+```abap
+PARAMETERS: p_part TYPE bu_partner,
+            p_bukrs TYPE bukrs.
+
+DATA: gt_totals TYPE TABLE OF ukm_totals,
+
+      gv_limit  TYPE ukm_credit_limit,
+      gv_waers  TYPE ukm_sgm_currency.
+
+SELECT SINGLE FROM ukm_kkber2sgm
+  INNER JOIN t001
+    ON t001~kkber = ukm_kkber2sgm~kkber
+  FIELDS ukm_kkber2sgm~credit_sgmnt
+  WHERE t001~bukrs = @p_bukrs
+  INTO @DATA(gv_credit_sgmnt).
+
+IF sy-subrc = 0.
+
+  CALL FUNCTION 'UKM_GET_COMMTS_RULEBASED'
+    EXPORTING
+      i_partner         = p_part"'' "Business Partner
+      i_segment         = gv_credit_sgmnt
+    IMPORTING
+      e_credit_limit    = gv_limit
+      e_currency        = gv_waers
+    EXCEPTIONS
+      partner_not_found = 1
+      segment_not_found = 2
+      OTHERS            = 3.
+
+  IF sy-subrc <> 0.
+  ENDIF.
+
+  CALL FUNCTION 'UKM_COMMTS_READ'
+    EXPORTING
+      i_partner     = p_part"'' "Business Partner
+      i_segment     = gv_credit_sgmnt
+      i_date        = '99991231' "Date
+    TABLES
+      et_ukm_totals = gt_totals.
+
+* GT_TOTALS-COMM_TYP
+* 100 = Offene Aufträge   - SD_CREDIT_EXPOSURE -> OPEN_ORDER
+* 200 = Offene Rechnungen = KNKK-SKFOR
+* 300 = Sonderobligo      = KNKK-SSOBL
+* 400 = Lieferwert        = SD_CREDIT_EXPOSURE -> OPEN_DELIVERY
+* 500 = Fakturawert       = SD_CREDIT_EXPOSURE -> OPEN_INVOICE
+
+ENDIF.
+```
+
 ### ABAP Extended Expressions
 
 * Run transaction `SE38`
