@@ -834,6 +834,28 @@ IF sy-subrc = 0.
 ENDIF.
 ```
 
+#### Get values of UKM_S_ADD_INFO
+
+![image](https://user-images.githubusercontent.com/30869493/129559125-d26f2275-b5e9-4e0c-95fa-46ea06231fa1.png)
+
+```abap
+DATA: lr_mo       TYPE REF TO   fsbp_memory_object,
+      lt_bp3100   TYPE TABLE OF bp3100,
+      ls_bp3100   LIKE LINE  OF lt_bp3100,
+      ls_add_info TYPE          ukm_s_add_info.
+
+  lr_mo ?= fsbp_memory_factory=>get_instance(
+             i_partner    = p_part
+             i_table_name = if_fsbp_const_xo_objects=>mo_bp3100 ).
+  lr_mo->get_data_new( IMPORTING e_data_new = lt_bp3100 ).
+
+  LOOP AT lt_bp3100 INTO ls_bp3100.
+    IF ls_bp3100-addtype = '10'.
+        DATA(ammount) = ls_bp3100-amnt.
+    ENDIF.
+  ENDLOOP.
+```
+
 ### ABAP Extended Expressions
 
 * Run transaction `SE38`
