@@ -16,6 +16,20 @@
 
 ![image](https://user-images.githubusercontent.com/30869493/128341169-e12e0512-5fcb-44ac-bf31-e7143faa9876.png)
 
+## Copy Table lines as ABAP statement
+
+![image](https://user-images.githubusercontent.com/30869493/134353052-51ebeecf-1b41-4afa-b6ed-deae8e12727d.png)
+
+
+![image](https://user-images.githubusercontent.com/30869493/134353002-35a29244-95fb-4379-adb6-0401995ce109.png)
+
+```abap
+VALUE #( ( CLIENT ='100' ACCOUNT_NUMBER ='00000001' BANK_CUSTOMER_ID ='0000000000100001' BANK_NAME ='Volksbank' CITY ='Gaertringen' CUKY_FIELD ='' BALANCE ='200.00 ' CURRENCY ='EUR' ACCOUNT_CATEGORY ='01' LASTCHANGEDAT ='20210922132826.0000000 '  )
+ ( CLIENT ='100' ACCOUNT_NUMBER ='00000002' BANK_CUSTOMER_ID ='0000000000200002' BANK_NAME ='Sparkasse' CITY ='Schwetzingen' CUKY_FIELD ='' BALANCE ='500.00 ' CURRENCY ='EUR' ACCOUNT_CATEGORY ='02' LASTCHANGEDAT ='20210922132826.0000000 '  )
+ ( CLIENT ='100' ACCOUNT_NUMBER ='00000003' BANK_CUSTOMER_ID ='0000000000200003' BANK_NAME ='Commerzbank' CITY ='Nuernberg' CUKY_FIELD ='' BALANCE ='150.00 ' CURRENCY ='EUR' ACCOUNT_CATEGORY ='02' LASTCHANGEDAT ='20210922132826.0000000 '  )
+ )
+```
+
 ## eclipse-abap-keywordcolors
 
 ABAP Keyword Colors -> Import -> .xml
