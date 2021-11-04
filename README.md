@@ -1,5 +1,3 @@
-> Compilation of things worth remembering in ABAP and SAP
-
 # ABAP
 
 ## Eclipse Shortcuts
