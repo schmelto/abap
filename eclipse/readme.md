@@ -16,7 +16,9 @@
 
 ABAP Keyword Colors -> Import -> .xml
 
-## add missing method `str` + `1`
+## Shortcuts + usage
+
+### add missing method -> `str` + `1`
 
 ```abap
 CLASS zcl_monster DEFINITION
@@ -59,3 +61,51 @@ METHODS create_monster
         value(monster_number) TYPE i.
 ```
 
+### extracting a method -> `alt` + `shift` + `M`
+
+```abap
+CLASS zcl_monster DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    METHODS: main.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zcl_monster IMPLEMENTATION.
+  METHOD main.
+    "Local Variables
+    DATA: monster_madness1 TYPE i,
+          monster_madness2 TYPE i,
+          description1     TYPE string,
+          description2     TYPE string.
+
+    monster_madness1 = 25.
+    monster_madness2 = 50.
+
+    " Derive Monster Sanity
+    IF monster_madness1 LT 30.
+      description1 = 'Fairly sane'.
+    ELSEIF monster_madness1 GT 90.
+      description1 = 'BONKERS'.
+    ENDIF.
+    IF monster_madness2 LT 30.
+      description1 = 'Fairly sane'.
+    ELSEIF monster_madness2 GT 90.
+      description1 = 'BONKERS'.
+    ENDIF.
+
+  ENDMETHOD.
+  
+ENDCLASS.
+```
+
+alt + shift + m
+
+![image](https://user-images.githubusercontent.com/30869493/137021889-7c415633-27b1-427d-ba1e-ccfea7749b48.png)
+
+![image](https://user-images.githubusercontent.com/30869493/137021968-7fc579ba-1bbc-4d69-a17e-502f4a3eb80b.png)
