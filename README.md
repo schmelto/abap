@@ -986,13 +986,14 @@ ENDIF.
 | `SM04` | End User Sessions |
 | `STMS` | Transport Management System (check if a transport went into the system) |
 
-## Customizing transactions (prefix)
+## Customizing transactions/reports
 
 | shortcut | what it does |
 |----|----|
 | `OBB8` | Maintain Payment terms |
 | `FBMP` | Dunning |
 | `FBZP` | Payment run |
+| `RFVITXBA` (Report) | Transport SO10 text |
 | `VKOA` | Accountfinding |
 
 ## SAP Tables
