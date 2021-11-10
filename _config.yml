@@ -1,4 +1,4 @@
 theme: jekyll-theme-cayman
 title: ABAP
 description: Compilation of things worth remembering in ABAP and SAP
-show_downloads: true
+show_downloads: false
