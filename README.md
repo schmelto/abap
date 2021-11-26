@@ -1073,9 +1073,9 @@ Select the enteries you want to transport
 
 ## Debug Payment Run
 
-1. Set a Break-Point in the Programm / Function module
+1. Set a Break-Point in the program / Function module
 2. Start the Payment Proposal Run in F110 without "Start immediately", for example using start time 12pm
-3. go to the Job Overview page using transaction `SM37` / `SMX` -> mark the F110 Job -> enter JDBG in the execution bar, this will start the Job
+3. go to the Job Overview page using transaction `SM37` / `SMX` -> mark the F110 Job -> enter `JDBG` in the execution bar, this will start the Job
 4. It should stop at the Break-Point
 
 ## Find BADIs for an excuted transaction -> `CL_EXITHANDLER`
