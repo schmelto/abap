@@ -1005,6 +1005,7 @@ ENDIF.
 | `CODE_SCANNER` | Check for Code |
 | `S_BCE_68001398` | Check wether a user have authorization to use a transaction or not |
 | `SAT` | Runtime Analysis |
+| `SCC4` | Open System for Customizing | 
 | `SE93` | Maintain transactions |
 | `SEARCH_SAP_MENU` | search though the SAP Menu |
 | `SM04` | End User Sessions |
