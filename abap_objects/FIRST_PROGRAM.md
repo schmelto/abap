@@ -64,6 +64,8 @@ ENDMODULE.
 
 ## Screen 0100
 
+![image](https://user-images.githubusercontent.com/30869493/148222021-89d3933b-7827-4fbb-9c0d-d75e696386de.png)
+
 ```abap
 PROCESS BEFORE OUTPUT.
   MODULE STATUS_0100.
