@@ -207,8 +207,9 @@ It is required when you want use keywords like export, exceptions and so on as f
 
 ## Function Modules
 
-Function modules are outdated. If you have to use one cause of implementing a BTE or something else create this function module and call a global class in it.
-**Example:**
+Function modules are outdated. If you have to use one because you have tp implement a Busniess Transaction Event (BTE) or something else create the function module and call a global class within it. The class should handle all the logic, the function module is only for "calling" the global class.
+
+**Example:** 
 
 We have following function module:
 
@@ -234,15 +235,16 @@ FUNCTION z_fi_edi_payext_2441
     
 ENDFUNCTION.
 ```
-In here we generate a new object from a global class in which our further coding will be placed.
+We have to create a new object with the type of out global class in which our further coding will take place.
 
 ```abap
 DATA(zcl_fi_edi_payext_2441) = NEW zcl_fi_edi_payext_2441( ).
 ```
-**Note:** Use inline declarations!
+> **Note:** Use inline declarations!
 
-Now we can call a public method of this class/object and can implement all further logic in here.
-We should put all parameters from the function module in the call of this method and made some exception handling here.
+Now we can call a public method of this class/object in which the logic part will be implemented.
+As best practice should we put all parameters from the function module in the call of the method (and made some initial exception handling here).
+
 ```abap
 zcl_fi_edi_payext_2441->change_idoc(
     EXPORTING
@@ -265,9 +267,11 @@ zcl_fi_edi_payext_2441->change_idoc(
     RAISE dont_create_idoc.
   ENDIF.
 ```
-The `[]` in `t_regup[]` is because we do not only want to pass the header line to the class rather then the entire table.
 
-The global class can look something like this:
+> The `[]` in `t_regup[]` is because we do not only want to pass the header line to the class rather then the entire table.
+
+The first draft of the global class can look something like this:
+
 ```abap
 CLASS zcl_fi_edi_payext_2441 DEFINITION
   PUBLIC
@@ -302,11 +306,14 @@ CLASS zcl_fi_edi_payext_2441 IMPLEMENTATION.
   ENDMETHOD.
 ENDCLASS.
 ```
-**Note:** We have to define `t_regup TYPE TABLE OF regup` and `t_edidd TYPE TABLE OF edidd` for using them in the class.
+> **Note:** We have to define `t_regup TYPE TABLE OF regup` and `t_edidd TYPE TABLE OF edidd` for using them in the class.
+
+> **Note:** The method which is also called in the function module has to be in the `PUBLIC SECTION` of the class.
 
 ## ABAP Docs
 
-To make the method more readable we can use ABAP Doc expressions like this:
+To make the method more readable/descriptive ABAP Doc expressions should be used:
+
 ```abap
 "! <p class="shorttext synchronized">Modify payment IDOCs</p>
 "! @exception dont_create_idoc | <p class="shorttext synchronized">Don't created a payment IDOC</p>
@@ -327,6 +334,16 @@ Types can be documented like:
 TYPES:
    "! <p class="shorttext synchronized">Explanation text</p>
    type TYPE TABLE OF spfli.
+```
+
+Same for `BEGIN OF...`-Structures.
+
+```abap
+TYPES:
+	"! <p class="shorttext synchronized">Explanation text</p>
+	BEGIN OF structure,
+   		field TYPE OF type.
+	TYPES END OF structure.
 ```
 
 ### Short Texts and their Synchronization
@@ -363,7 +380,8 @@ Example:
 
 For ABAP Unit Tests you have to declare a testing class (`CLASS test DEFINITION`) with the additive `FOR TESTING`.
 
-Here we have an example of a normal class with two methods `set_text_to_x` and `minus_ten_percent` for wich we want to define some unit tests.
+Here we have an example of a normal class with two methods `set_text_to_x` and `minus_ten_percent` for which we want to define some unit tests.
+
 ```abap
 CLASS class DEFINITION.
   PUBLIC SECTION.
@@ -429,6 +447,7 @@ ENDCLASS.
 `... DURATION {SHORT|MEDIUM|LONG}`
 
 **An other Unit Test:**
+
 ```abap
 CLASS money_machine DEFINITION.
 
@@ -496,7 +515,9 @@ CLASS test_get_ammount_in_coins IMPLEMENTATION.
 
 ENDCLASS.
 ```
+
 **Simulate different inputs in one testing method:**
+
 ```abap
 CLASS class DEFINITION.
   PUBLIC SECTION.
@@ -577,7 +598,7 @@ ENDCLASS.
 ### How to implement Unit Tests to a global Class in Eclipse?
 
 Declare Test Classes: 
-![image](https://user-images.githubusercontent.com/30869493/116395736-cc037600-a824-11eb-88cb-d40260edc36a.png)
+![declare_test_class](https://user-images.githubusercontent.com/30869493/116395736-cc037600-a824-11eb-88cb-d40260edc36a.png)
 
 ## ALV - ABAP List Viewer
 
@@ -589,7 +610,7 @@ To define a new ALV Grid you can use the type `cl_salv_table`.
 DATA: alv TYPE REF TO cl_salv_table.
 ```
 
-Of course we need some data to display something. In this case we selection enteries from table t001.
+Of course we need some data to display something. In this case we select enteries from table `t001`.
 
 ```abap
 SELECT * FROM t001 INTO TABLE @DATA(t001).
@@ -617,7 +638,7 @@ alv->display( ).
 
 ### Basic ALV Grid
 
-Following coding shows how to display a basic ALV Grid. Further it modify some ALV-functions and rename some columns.
+Following coding shows how to display a basic ALV Grid. Further it modifies some ALV-functions and rename some columns.
 
 ```abap
 CLASS t001_alv DEFINITION.
