@@ -4,17 +4,7 @@
 
 https://tools.eu1.hana.ondemand.com/
 
-## ToDos
 
-![image](https://user-images.githubusercontent.com/30869493/138055873-b134dfa6-36c4-4284-9b19-52c780899f67.png)
-
-**Pattern:**
-```abap
-" ToDo: 
-"   Date: ${date}
-"   User: ${user}
-"   Info: 
-```
 
 ## Maintain Text Elements
 
@@ -131,3 +121,16 @@ ENDCLASS.
 ![image](https://user-images.githubusercontent.com/30869493/137021889-7c415633-27b1-427d-ba1e-ccfea7749b48.png)
 
 ![image](https://user-images.githubusercontent.com/30869493/137021968-7fc579ba-1bbc-4d69-a17e-502f4a3eb80b.png)
+
+## 
+## ToDos
+
+![image](https://user-images.githubusercontent.com/30869493/138055873-b134dfa6-36c4-4284-9b19-52c780899f67.png)
+
+**Pattern:**
+```abap
+" ToDo: 
+"   Date: ${date}
+"   User: ${user}
+"   Info: 
+```
