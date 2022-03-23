@@ -12,6 +12,7 @@
 | `str` + `H` | Abap Source Text Search |
 | `str` + `shift` + `alt` | Search |
 | `str` + `shift` + `L` | List all available Keybord-Shortcuts |
+| `str` + `space` | Auto complete |
 | `str` + `<` | Comment |
 | `str` + `>` | Undo comment |
 
