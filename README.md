@@ -4,17 +4,17 @@
 
 | shortcut | what it does |
 |----|----|
-| `alt` + `shift` + `A` | Eclipse Box Selection |
-| `alt` + `str` + &#8595; | duplicate lines |
-| `alt` + `U` | delete unused variables |
-| `shift` + `F1` | Pretty Printer |
-| `str` + `1` | Opens Quickfix/Quickassist Dialog on the selected element |
-| `str` + `H` | Abap Source Text Search |
-| `str` + `shift` + `alt` | Search |
-| `str` + `shift` + `L` | List all available Keybord-Shortcuts |
-| `str` + `space` | Auto complete |
-| `str` + `<` | Comment |
-| `str` + `>` | Undo comment |
+| <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>A</kbd> | Eclipse Box Selection |
+| <kbd>alt</kbd> + <kbd>str</kbd> + <kbd>&#8595;</kbd> | duplicate lines |
+| <kbd>alt</kbd> + <kbd>U</kbd> | delete unused variables |
+| <kbd>shift</kbd> + <kbd>F1</kbd> | Pretty Printer |
+| <kbd>str</kbd> + <kbd>1</kbd> | Opens Quickfix/Quickassist Dialog on the selected element |
+| <kbd>str</kbd> + <kbd>H</kbd> | Abap Source Text Search |
+| <kbd>str</kbd> + <kbd>shift</kbd> + <kbd>alt</kbd> | Search |
+| <kbd>str</kbd> + <kbd>shift</kbd> + <kbd>L</kbd> | List all available Keybord-Shortcuts |
+| <kbd>str</kbd> + <kbd>space</kbd> | Auto complete |
+| <kbd>str</kbd> + <kbd><</kbd> | Comment |
+| <kbd>str</kbd> + <kbd><</kbd> | Undo comment |
 
 &#8594; more shortcuts can be found [here](https://blogs.sap.com/2021/07/16/abap-adt-frequently-used-short-cuts/?utm_campaign=ABAPWeekly&utm_medium=email&utm_source=ABAPWeekly_50)
 
