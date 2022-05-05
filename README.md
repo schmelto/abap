@@ -982,7 +982,7 @@ See [here](docs/z_import_excel_into_table.abap).
 ### ABAP Extended Expressions
 
 * Run transaction `SE38`
-* `DEMO_EXPRESSIONS` -> `F8`
+* `DEMO_EXPRESSIONS` -> <kbd>F8</kbd>
 
 ![DEMO_EXPRESSIONS](https://user-images.githubusercontent.com/30869493/133969858-3037542b-f9d4-45bf-948b-164281b7c712.png)
 
@@ -1187,7 +1187,7 @@ ENDIF.
 	- I_EDIT -> x
 	- I_SAPEDIT -> x
   - I_DISPLAY-> x
-- `ENTER` -> <kbd>F8</kbd>
+- <kbd>ENTER</kbd> -> <kbd>F8</kbd>
 
 Select the enteries you want to transport
 -> `Table Entry` -> `Tranport`
