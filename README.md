@@ -595,9 +595,9 @@ CLASS test IMPLEMENTATION.
   ENDMETHOD.
 ENDCLASS.
 ```
-### TDS - Test Double Framework
+### TDF - Test Double Framework
 
-The Test Double Framework (TDF for short) provides tools to create so-called doubles for the objects class, table and core data service (CDS) at test runtime and to test against them.
+The Test Double Framework (TDF for short) provides tools to create so-called doubles for the objects class, table and core data service (CDS) at test runtime to test against them.
 
 **General:**
 
