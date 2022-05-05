@@ -1156,11 +1156,11 @@ ENDIF.
 
 - run transaction `SE16`
 - Enter Table
-- Fill selection screen -> `F8`
+- Fill selection screen -> <kbd>F8</kbd>
 - Select Table entries
 - "View" with the glasses
 - start debugger with `/h` in command line
-- click in the relevant field and hit `ENTER`
+- click in the relevant field and hit <kbd>ENTER</kbd>
 - Aktivate Variables
   - EDIT -> Modify line
   - INSR -> Insert line
@@ -1177,7 +1177,7 @@ ENDIF.
   
   ![se16n debugger variables](https://user-images.githubusercontent.com/30869493/124892270-041ff580-dfda-11eb-81c8-fa1359b1bba4.png)
 
-- `ENTER` -> `F8`
+- <kbd>ENTER</kbd> -> <kbd>F8</kbd>
 
 ## Transport SAP Table entries
 
@@ -1187,7 +1187,7 @@ ENDIF.
 	- I_EDIT -> x
 	- I_SAPEDIT -> x
   - I_DISPLAY-> x
-- `ENTER` -> `F8`
+- `ENTER` -> <kbd>F8</kbd>
 
 Select the enteries you want to transport
 -> `Table Entry` -> `Tranport`
