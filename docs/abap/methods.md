@@ -176,3 +176,21 @@ It is required when you want use keywords like export, exceptions and so on as f
 CATCH zcx_excel INTO exception.
 zcl_bc_screen_message=>output( text = exeption->get_text( ) ).
 ```
+
+### Remove leading zeros for WRITE statement
+
+**New:**
+```abap
+message = |{ delivery ALPHA = OUT }|.
+```
+
+**Old:** 
+```abap
+CALL FUNCTION 'CONVERSTION_EXIT_ALPHA_OUTPUT'
+    EXPORTING in = delivery
+    IMPORTING = delivery.
+" and for further processing add the leading zeros back
+CALL FUNCTION 'CONVERSTION_EXIT_ALPHA_INPUT'
+    EXPORTING in = delivery
+    IMPORTING = delivery.
+```
