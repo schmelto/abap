@@ -1,6 +1,6 @@
 # Eclipse
 
-## ABAP Development Tools
+## ABAP Development Tools (ADT)
 
 https://tools.eu1.hana.ondemand.com/
 
@@ -8,7 +8,7 @@ https://tools.eu1.hana.ondemand.com/
 
 | shortcut | what it does |
 |----|----|
-| <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>A</kbd> | Eclipse Box Selection |
+| <kbd>alt</kbd> + <kbd>shift</&#8594;kbd> + <kbd>A</kbd> | Eclipse Box Selection |
 | <kbd>alt</kbd> + <kbd>str</kbd> + <kbd>&#8595;</kbd> | duplicate lines |
 | <kbd>alt</kbd> + <kbd>U</kbd> | delete unused variables |
 | <kbd>shift</kbd> + <kbd>F1</kbd> | Pretty Printer |
@@ -43,7 +43,7 @@ VALUE #( ( CLIENT ='100' ACCOUNT_NUMBER ='00000001' BANK_CUSTOMER_ID ='000000000
 
 ## Shortcuts + usage
 
-### add missing method -> <kbd>str</kbd> + <kbd>1</kbd>
+### add missing method &#8594; <kbd>str</kbd> + <kbd>1</kbd>
 
 ```abap
 CLASS zcl_monster DEFINITION
@@ -86,7 +86,7 @@ METHODS create_monster
         value(monster_number) TYPE i.
 ```
 
-### extracting a method -> <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>M</kbd>
+### extracting a method &#8594; <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>M</kbd>
 
 ```abap
 CLASS zcl_monster DEFINITION

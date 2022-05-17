@@ -76,8 +76,3 @@ ENDMETHOD.
 * Transfer of the test data to the environment
 * Execution of the test cases against the test data
 * Dismantling of the environment when the test class is dismantled
-
-### How to implement Unit Tests to a global Class in Eclipse?
-
-Declare Test Classes: 
-![declare_test_class](https://user-images.githubusercontent.com/30869493/116395736-cc037600-a824-11eb-88cb-d40260edc36a.png)

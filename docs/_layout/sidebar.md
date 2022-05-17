@@ -9,6 +9,7 @@
   - [Methods](/abap/methods.md)
   - [Samples](/abap/samples/samples.md)
     - [ABAP Objects](/abap/samples/abap_objects.md)
+    - [z_change_langu.abap](/abap/samples/z_change_langu.md)
     - [z_import_excel_into_table.abap](/abap/samples/z_import_excel_into_table.md)
     - [zcl_tutorial_simple_daemon.abap](/abap/samples/zcl_tutorial_simple_daemon.md)
 
@@ -18,3 +19,7 @@
     - [Light theme](eclipse/color_settings/colorSettings_light.md)
     
 - [SAP](/sap/sap.md)
+  - [Fiori](/sap/fiori.md)
+  - [Session](/sap/session.md)
+  - [Transactions](/sap/transactions.md)
+  - [Transport Requests](/sap/transport_requests.md)

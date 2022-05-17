@@ -1,7 +1,5 @@
 # ABAP Hello World
 
-**A**dvanced **B**usiness **A**pplication **P**rogramming
-
 ## Let's start with a simple `Hello World`-Programm
 
 1. From SAP Easy Access screen type the t-code `SE38` in the command field to launch the ABAP Editor.
