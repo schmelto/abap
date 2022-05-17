@@ -29,6 +29,10 @@
 | `RFVITXBA` (Report) | Transport SO10 text |
 | `VKOA` | Accountfinding |
 
+### Sets
+
+Transactions `GS01`, `GS02` and `GS03`.
+
 ### Maintain Transactions
 
 Transaction `SE93`
