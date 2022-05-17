@@ -70,3 +70,38 @@ DATA: t_pbank_line TYPE f110_pbank.
 t_pbank_line-xstda = ''.
 MODIFY t_pbank[] FROM t_pbank_line TRANSPORTING xstda WHERE bvtyp <> i_waers.
 ```
+
+### replace characters
+
+```abap
+    "! <p class="shorttext synchronized">Replace characters in a given string</p>
+    "! <p class="shorttext synchronized">Please note that strings should be placed in `` and not ''</p>
+    "! @parameter input | <p class="shorttext synchronized">Input string</p>
+    "! @parameter characters | <p class="shorttext synchronized">Characters which should be replaced</p>
+    "! @parameter replace_character | <p class="shorttext synchronized">Character with which the given characters are replaced</p>
+    "! @parameter result | <p class="shorttext synchronized">Modified string</p>
+    METHODS replace_chars
+      IMPORTING
+                input             TYPE string
+                characters        TYPE string
+                replace_character TYPE string
+      RETURNING VALUE(result)     TYPE string.
+```
+
+```abap
+  METHOD replace_chars.
+
+    result = input.
+    DO strlen( characters ) TIMES.
+      DATA(counter) = sy-index - 1.
+      REPLACE ALL OCCURRENCES OF characters+counter(1) IN result WITH replace_character.
+    ENDDO.
+
+  ENDMETHOD.
+```
+
+or
+
+```abap
+replace( val = <lv_idocfeld> regex = '\&|\+' with = `` occ = 0 ).
+```
