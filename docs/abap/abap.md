@@ -60,3 +60,13 @@ CALL FUNCTION 'CONVERSTION_EXIT_ALPHA_INPUT'
     EXPORTING in = delivery
     IMPORTING = delivery.
 ```
+
+## MODIFY table FROM line TRANSPORTING x WHERE x = y
+
+Modify all lines excluding one
+
+```abap
+DATA: t_pbank_line TYPE f110_pbank.
+t_pbank_line-xstda = ''.
+MODIFY t_pbank[] FROM t_pbank_line TRANSPORTING xstda WHERE bvtyp <> i_waers.
+```
