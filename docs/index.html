@@ -1,0 +1,52 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/themes/vue.css" />
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+    el: '#app',
+    repo: "schmelto/abap",
+    maxLevel: 2,
+    homepage: "index.md",
+    loadNavbar: "_layout/navbar.md",
+    loadSidebar: "_layout/sidebar.md",
+    relativePath: false,
+    cover: false,
+    auto2top: true,
+    logo: 'logo.png',
+    name: "schmelto/abap",
+    themeColor: "#ef5350",
+    // alias: {},
+    // autoHeader: true,
+    // executeScript: true,
+    // noEmoji: false,
+    // mergeNavbar: true,
+    "flexible-alerts": {
+      style: "flat",
+    },
+    copyCode: {
+      buttonText: "Copy this snippet",
+      errorText: "Could not copy!",
+      successText: "Copied to clipboard",
+    },
+    }
+  </script>
+  <!-- Docsify v4 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docsify/4.12.1/docsify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@1"></script>
+<script src="https://unpkg.com/docsify-copy-code@2"></script>
+<!-- Prism (syntax highlighting) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-typescript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-abap.min.js"></script>
+
+</body>
+</html>
