@@ -9,3 +9,4 @@ npm install
 npm run dev
 ```
 
+This will start a local development server.
