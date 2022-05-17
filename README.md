@@ -1109,9 +1109,9 @@ ENDIF.
 
 | shortcut | what it does |
 |----|----|
-| `str` + `shift` + `7` | focus on execution bar |
-| `str` + `n` | open new window |
-| `str` + `y` | mark in SAP Gui |
+| <kbd>str</kbd> + <kbd>shift</kbd> + <kbd>7</kbd> | focus on execution bar |
+| <kbd>str</kbd> + <kbd>N</kbd> | open new window |
+| <kbd>str</kbd> + <kbd>Y</kbd> | mark in SAP Gui |
 
 ## Transactions (prefix)
 
