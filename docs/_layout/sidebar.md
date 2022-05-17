@@ -5,6 +5,7 @@
     - [TDF - Test Data Framework](/abap/unit_tests/tdf.md)
   - [ALV - ABAP List Viewer](/abap/alv.md)
   - [DATA and TYPES](/abap/data_and_types.md)
+  - [Field Symbols](/abap/field_symbols.md)
   - [Function Modules](/abap/function_modules.md)
   - [Methods](/abap/methods.md)
   - [Samples](/abap/samples/samples.md)
@@ -20,6 +21,7 @@
     
 - [SAP](/sap/sap.md)
   - [Fiori](/sap/fiori.md)
+  - [SAP Background Jobs](/sap/sap_job.md)
   - [Session](/sap/session.md)
   - [Transactions](/sap/transactions.md)
   - [Transport Requests](/sap/transport_requests.md)
