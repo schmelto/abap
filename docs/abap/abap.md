@@ -162,3 +162,55 @@ ENDLOOP.
 ```
 
 https://blog.sap-press.com/conditional-logic-in-abap
+
+### The COND Statement as a Replacement for IF/ELSE
+
+```abap
+* Fill the Sanity Description
+CASE cs_monster_header-sanity_percentage.
+WHEN 5.
+     cs_monster_header-sanity_description = 'VERY SANE'.
+WHEN 4.
+   cs_monster_header-sanity_description = 'SANE'.
+WHEN 3.
+   cs_monster_header-sanity_description = 'SLIGHTLY MAD'.
+WHEN 2.
+   cs_monster_header-sanity_description = 'VERY MAD'.
+WHEN 1.
+   cs_monster_header-sanity_description = 'BONKERS'.
+WHEN OTHERS.
+cs_monster_header-sanity_description = 'RENAMES SAP PRODUCTS'.
+ENDCASE.
+```
+
+In 7.4, you can achieve the same thing, but you can do so in a more compact way by using the COND constructor operator. This also means that you don’t have to keep specifying the target variable again and again.
+
+```abap
+   "Fill the Sanity Description
+   cs_monster_header-sanity_description =
+   COND #(
+   WHEN cs_monster_header-sanity_percentage > 5 THEN 'VERY SANE'
+   WHEN cs_monster_header-sanity_percentage > 4 THEN 'SANE'
+   WHEN cs_monster_header-sanity_percentage > 3 THEN 'SLIGHTLY MAD'
+   WHEN cs_monster_header-sanity_percentage > 2 THEN 'VERY MAD'
+   WHEN cs_monster_header-sanity_percentage > 1 THEN 'BONKERS'
+   ELSE 'RENAMES SAP PRODUCTS' ).
+```
+
+That looks just like a CASE statement, and the only benefit of the change at this point is that it’s a bit more compact. However, when the business decides that you need to take the day into account when saying if a monster is bonkers or not, you can just change part of the COND construct. In the pre-7.4 situation, you had to give up on the whole idea of a CASE statement and rewrite everything as an IF/ELSE construct. The only change needed to the COND logic is shown here.
+
+```abap
+DATA: day TYPE char10 VALUE 'Tuesday'."Lenny Henry!
+* Fill the Sanity Description
+cs_monster_header-sanity_description =
+COND text30(
+WHEN cs_monster_header-sanity_percentage = 5 THEN 'VERY SANE'
+WHEN cs_monster_header-sanity_percentage = 4 THEN 'SANE'
+WHEN cs_monster_header-sanity_percentage = 3 THEN 'SLIGHTLY MAD'
+WHEN cs_monster_header-sanity_percentage = 2 THEN 'VERY MAD'
+WHEN cs_monster_header-sanity_percentage = 1 AND day = 'Tuesday' THEN 'HAVING AN OFF DAY' "<--
+WHEN cs_monster_header-sanity_percentage = 1 THEN 'BONKERS'
+ELSE 'RENAMES SAP PRODUCTS' ).
+```
+
+https://blog.sap-press.com/conditional-logic-in-abap
