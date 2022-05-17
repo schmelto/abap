@@ -169,3 +169,10 @@ METHODS set_item_zz_sgtxt
 
 The exclamation mark is nothing more than a hint to the ABAP compiler.
 It is required when you want use keywords like export, exceptions and so on as formal/actual argument.
+
+### Method chaining
+
+```abap
+CATCH zcx_excel INTO exception.
+zcl_bc_screen_message=>output( text = exeption->get_text( ) ).
+```
