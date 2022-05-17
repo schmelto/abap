@@ -1,4 +1,4 @@
-# z_change_langu.abap
+## z_change_langu.abap
 
 Change the logon language without new Login to SAP GUI.
 

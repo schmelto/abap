@@ -5,6 +5,7 @@
     - [TDF - Test Data Framework](/abap/unit_tests/tdf.md)
   - [ALV - ABAP List Viewer](/abap/alv.md)
   - [DATA and TYPES](/abap/data_and_types.md)
+  - [Field Symbols](/abap/field_symbols.md)
   - [Function Modules](/abap/function_modules.md)
   - [Methods](/abap/methods.md)
   - [Samples](/abap/samples/samples.md)
@@ -12,6 +13,7 @@
     - [z_change_langu.abap](/abap/samples/z_change_langu.md)
     - [z_import_excel_into_table.abap](/abap/samples/z_import_excel_into_table.md)
     - [zcl_tutorial_simple_daemon.abap](/abap/samples/zcl_tutorial_simple_daemon.md)
+    - [zfi_change_ukmbp_data.abap](/abap/samples/zfi_change_ukmbp_data.md)
 
 - [Eclipse](/eclipse/eclipse.md)
   - [Eclipse ABAP Keywordcolors](/eclipse/color_settings/color_settings.md)
@@ -20,6 +22,7 @@
     
 - [SAP](/sap/sap.md)
   - [Fiori](/sap/fiori.md)
+  - [SAP Background Jobs](/sap/sap_job.md)
   - [Session](/sap/session.md)
   - [Transactions](/sap/transactions.md)
   - [Transport Requests](/sap/transport_requests.md)
