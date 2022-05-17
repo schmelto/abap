@@ -214,3 +214,18 @@ ELSE 'RENAMES SAP PRODUCTS' ).
 ```
 
 https://blog.sap-press.com/conditional-logic-in-abap
+
+### Using XSDBOOL
+
+```abap
+IF xsdbool( empty_table[] IS NOT INITIAL ) = abap_false.
+   WRITE:/ 'This table is empty'.
+ELSE.
+   WRITE:/ 'This table is as full as full can be'.
+ENDIF.
+   IF xsdbool( 1 = 2 ) = abap_false.
+     WRITE:/ '1 does not equal 2'.
+ELSE.
+     WRITE:/ '1 equals 2, and the world is made of snow'.
+ENDIF.
+```
