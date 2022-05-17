@@ -38,3 +38,35 @@ For example:
 | GET_USER_FORMATTED_NAME | BAPI_USER_GET_DETAIL |
 | GET_USER_DESCRIPTION | BAPI_USER_GET_DETAIL |
 | GET_USER_BUSINESS_PARTNER_ID | Business-Partner-ID of the user (Cloud) |
+
+### Set additional credit management data in S/4HANA
+
+See [zfi_change_ukmbp_data](abap/samples/zfi_change_ukmbp_data.md).
+
+### Remove leading zeros for WRITE statement
+
+**New:**
+```abap
+message = |{ delivery ALPHA = OUT }|.
+```
+
+**Old:** 
+```abap
+CALL FUNCTION 'CONVERSTION_EXIT_ALPHA_OUTPUT'
+    EXPORTING in = delivery
+    IMPORTING = delivery.
+" and for further processing add the leading zeros back
+CALL FUNCTION 'CONVERSTION_EXIT_ALPHA_INPUT'
+    EXPORTING in = delivery
+    IMPORTING = delivery.
+```
+
+## MODIFY table FROM line TRANSPORTING x WHERE x = y
+
+Modify all lines excluding one
+
+```abap
+DATA: t_pbank_line TYPE f110_pbank.
+t_pbank_line-xstda = ''.
+MODIFY t_pbank[] FROM t_pbank_line TRANSPORTING xstda WHERE bvtyp <> i_waers.
+```
