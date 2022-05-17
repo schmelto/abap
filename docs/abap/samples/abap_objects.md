@@ -1,6 +1,4 @@
-# First Program
-
-## Main
+## First Program with ABAP Objects
 
 ```abap
 REPORT z_first_program.
@@ -62,7 +60,7 @@ MODULE user_command_0100 INPUT.
 ENDMODULE.
 ```
 
-## Screen 0100
+### Screen 0100
 
 ![image](https://user-images.githubusercontent.com/30869493/148222021-89d3933b-7827-4fbb-9c0d-d75e696386de.png)
 
@@ -74,6 +72,6 @@ PROCESS AFTER INPUT.
   MODULE USER_COMMAND_0100.
 ```
 
-## SCREEN_100
+### SCREEN_100
 
 ![image](https://user-images.githubusercontent.com/30869493/148220037-34c3cc9c-778a-4781-997c-aaac7efaf344.png)

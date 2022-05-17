@@ -77,7 +77,7 @@ DATA: lr_mo       TYPE REF TO   fsbp_memory_object,
 
 ### Import Excel into internal Table
 
-See [here](docs/z_import_excel_into_table.abap).
+See [here](/abap/samples/z_import_excel_into_table.md).
 
 ### ABAP Extended Expressions
 

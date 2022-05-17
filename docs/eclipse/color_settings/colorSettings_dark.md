@@ -1,4 +1,4 @@
-## Color Settings dark
+## Dark Theme - Color Settings
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
