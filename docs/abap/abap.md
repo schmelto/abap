@@ -42,3 +42,21 @@ For example:
 ### Set additional credit management data in S/4HANA
 
 See [zfi_change_ukmbp_data](abap/samples/zfi_change_ukmbp_data.md).
+
+### Remove leading zeros for WRITE statement
+
+**New:**
+```abap
+message = |{ delivery ALPHA = OUT }|.
+```
+
+**Old:** 
+```abap
+CALL FUNCTION 'CONVERSTION_EXIT_ALPHA_OUTPUT'
+    EXPORTING in = delivery
+    IMPORTING = delivery.
+" and for further processing add the leading zeros back
+CALL FUNCTION 'CONVERSTION_EXIT_ALPHA_INPUT'
+    EXPORTING in = delivery
+    IMPORTING = delivery.
+```
