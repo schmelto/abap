@@ -1,6 +1,6 @@
-# ABAP Hello World
+## ABAP Hello World
 
-## Let's start with a simple `Hello World`-Programm
+**Let's start with a simple `Hello World`-Programm**
 
 1. From SAP Easy Access screen type the t-code `SE38` in the command field to launch the ABAP Editor.
 2. In the ABAP Editor – Initial Screen, enter the program name as `zdemo_helloworld`. SAP requires all customized programs, which are created by customers, to have names starting with the letter Z or Y.
@@ -13,13 +13,13 @@ WRITE 'Hello World'.
 ```
 7. To execute the program, you click the `Direct Processing` button.
 
-**How it works:**
+### How it works
 
 * The `report` keyword indicates that this program is a report or an executable program. It means you can invoke the program directly from the `SE38` t-code.
 * To output a text to the screen, you use the `write` statement with a specified string.
 * In ABAP, every statement ends with a full-stop (`.`). Therefore, you need to add the full-stop after the string `'Hello World'`.
 
-## Full program
+### Full program
 
 ```abap
 REPORT zdemo_helloworld.
