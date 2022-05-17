@@ -38,3 +38,7 @@ For example:
 | GET_USER_FORMATTED_NAME | BAPI_USER_GET_DETAIL |
 | GET_USER_DESCRIPTION | BAPI_USER_GET_DETAIL |
 | GET_USER_BUSINESS_PARTNER_ID | Business-Partner-ID of the user (Cloud) |
+
+### Set additional credit management data in S/4HANA
+
+See [zfi_change_ukmbp_data](abap/samples/zfi_change_ukmbp_data.md).
