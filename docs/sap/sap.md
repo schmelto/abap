@@ -16,6 +16,7 @@
 | DD02L | SAP Tables data |
 | T001 | Company Codes |
 | TSTC | SAP Transaction Codes |
+| TSTCT | SAP Transaction Codes Texts |
 
 ## Edit SAP Table entries
 
