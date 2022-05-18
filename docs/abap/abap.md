@@ -262,3 +262,18 @@ IF value IS SUPPLIED.
     lo_monster_log->log_value( lo_do_value ).
 ENDIF.
 ```
+
+### Reading from a table
+
+**New:**
+
+```abap
+lo_monster = zcl_monster_factory( lt_monsters[ monster_name = ld_monster_name]-monster_number ).
+```
+
+**Old:**
+
+```abap
+READ TABLE lt_monsters INTO ls_mosnters WITH KEY monster_name = ld_monster_name.
+lo_monster = zcl_monster_factory( ls_monster-monster_number ).
+```
