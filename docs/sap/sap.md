@@ -13,6 +13,7 @@
 |----|----|
 | ABLM_BLACKLIST | Blacklist Items of Executables from Applicaitons |
 | ACDOCA | Universal Journal Entry Line Items |
+| DD02L | SAP Tables data |
 | T001 | Company Codes |
 | TSTC | SAP Transaction Codes |
 
