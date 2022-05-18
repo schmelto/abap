@@ -14,6 +14,7 @@
 | ABLM_BLACKLIST | Blacklist Items of Executables from Applicaitons |
 | ACDOCA | Universal Journal Entry Line Items |
 | DD02L | SAP Tables data |
+| EKKN | Account Assignment in Purchasing Document |
 | T001 | Company Codes |
 | TSTC | SAP Transaction Codes |
 | TSTCT | SAP Transaction Codes Texts |
