@@ -113,3 +113,12 @@ The table entries should now be reset using the program `RFPAYM_RESET`.
 **Now you can execute `RFF110S_REVERSE`**
 
 ![RFF110S_REVERSE](https://user-images.githubusercontent.com/30869493/143263560-3e2054df-55e1-460b-bbbd-d8a646975aae.png)
+
+### Change limit of payment run (`FBZP`)`
+
+Transaction: `FBZP`
+
+![image](https://user-images.githubusercontent.com/30869493/148197363-fedbb961-4af2-47e2-a485-cb7cc33c238e.png)
+
+The whole thing can be circumvented a bit by entering the payment method in an invoice.
+Then all without a payment method are added up for the vendor (under limit) and an invoice with payment method as one payment (under limit). However, if an invoice is over the limit, the limit must be adjusted.
