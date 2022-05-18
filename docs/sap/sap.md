@@ -89,3 +89,27 @@ You can also set some tax code as default one in these transactions. Screenshot 
 ### Open and close booking periods
 
 Transaction `OB52`
+
+### Reverse Payment Run (`F110`)
+
+With the program `RFF110S_REVERSE` (F110: Reverse Payment Run) a complete payment run can be canceled.
+
+To do so some previous steps have to be executed...
+
+**What to do if payment media have already been created?**
+
+Reset the EDI status using the program `RFFOEDI2`.
+
+![RFFOEDI2](https://user-images.githubusercontent.com/30869493/143263710-fc0e2bfa-7d48-46a3-be58-1545ba19e451.png)
+
+
+**Reset table entries**
+
+The table entries should now be reset using the program `RFPAYM_RESET`.
+
+![RFPAYM_RESET](https://user-images.githubusercontent.com/30869493/143263794-12ffa586-5923-4dfb-a93a-f4c28226e76f.png)
+
+
+**Now you can execute `RFF110S_REVERSE`**
+
+![RFF110S_REVERSE](https://user-images.githubusercontent.com/30869493/143263560-3e2054df-55e1-460b-bbbd-d8a646975aae.png)
