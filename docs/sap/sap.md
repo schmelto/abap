@@ -74,3 +74,13 @@ Select the enteries you want to transport
 * navigate to method `get_instance` and set a Break-Point in the first line of `cl_exithandler=>get_class_name_by_interface`
 * Use the transaction in which you are BAdI-hunting
 * Examine the contents of the field exit_name whenever the processing stops at the breakpoint. I have found a case where exit_name was an unknown field. Then class_name gave a good clue to the name of the BAdI.
+
+### Configure tax codes that will be available for end-users
+
+Transaction: `OBZT`
+
+In this transaction you can configure the tax codes that will be available for end-users in FI-AP (FB60 / FB65) / FI-AR (FB70 / FB75) transactions as well as logistics invoice verification (MIRO).
+
+You can also set some tax code as default one in these transactions. Screenshot of typical tax codes settings can be found below. Note: the visibility of input tax codes can be customized differently for FI-AP accounting and logistics invoice verification (in case, when FI-AP should be used only in certain cases that require specific tax codes). In this example the visibility of input tax codes was customized in the same way for FI-AP and MM-LIV areas.
+
+![image](https://user-images.githubusercontent.com/30869493/140476010-9d073da7-d9d2-4cb0-9480-343c1534574a.png)
