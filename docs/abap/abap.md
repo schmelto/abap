@@ -241,3 +241,24 @@ This can be selected in a database selection with the keyword `IN`.
 ```abap
 SELECT * FROM bseg INTO TABLE @DATA(lt_bseg) WHERE belnr IN @belnr.
 ```
+
+### TYPE REF TO DATA
+
+**New:**
+```abap
+"VALUE is an IMPORTING parameter TYPE ANY
+IF value IS SUPPLIED.
+    lo_monster_log->log_value( REF#( value ) ).
+ENDIF.
+```
+
+**Old:**
+```abap
+DATA: lo_do_calue TYPE REF TO DATA.
+"VALUE is an IMPORTING parameter TYPE ANY
+IF value IS SUPPLIED.
+    CREATE DATA lo_do_value LIKE value.
+    GET REFERENCE OF value INTO lo_do_value.
+    lo_monster_log->log_value( lo_do_value ).
+ENDIF.
+```
