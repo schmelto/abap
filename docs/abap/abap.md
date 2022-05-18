@@ -229,3 +229,15 @@ ELSE.
      WRITE:/ '1 equals 2, and the world is made of snow'.
 ENDIF.
 ```
+
+### Use SELECT-OPTIONS in database selection
+
+```abap
+SELECT-OPTIONS: belnr FOR bseg-belnr.
+```
+
+This can be selected in a database selection with the keyword `IN`.
+
+```abap
+SELECT * FROM bseg INTO TABLE @DATA(lt_bseg) WHERE belnr IN @belnr.
+```
