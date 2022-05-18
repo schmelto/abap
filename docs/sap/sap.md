@@ -15,6 +15,7 @@
 | ACDOCA | Universal Journal Entry Line Items |
 | DD02L | SAP Tables data |
 | EKKN | Account Assignment in Purchasing Document |
+| PRGN_CORR2 | Correction Table for Modif. Transaction Codes in Area Menus data |
 | T001 | Company Codes |
 | TSTC | SAP Transaction Codes |
 | TSTCT | SAP Transaction Codes Texts |
