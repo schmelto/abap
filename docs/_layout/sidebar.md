@@ -21,6 +21,7 @@
     - [Light theme](eclipse/color_settings/colorSettings_light.md)
     
 - [SAP](/sap/sap.md)
+  - [BADI](/sap/badi.md)
   - [Fiori](/sap/fiori.md)
   - [Reports](/sap/reports.md)
   - [SAP Background Jobs](/sap/sap_job.md)
