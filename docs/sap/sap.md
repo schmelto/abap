@@ -42,8 +42,8 @@
 - Enter Table
 - `/h`
 - in the variables fill variables and change the value to `x` with the pen icon
-  - gd-edit &#8594; x
-  - gd-sapedit &#8594; x
+  - gd-edit &#8594; `x`
+  - gd-sapedit &#8594; `x`
   
   ![se16n debugger variables](https://user-images.githubusercontent.com/30869493/124892270-041ff580-dfda-11eb-81c8-fa1359b1bba4.png)
 
