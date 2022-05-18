@@ -84,3 +84,7 @@ In this transaction you can configure the tax codes that will be available for e
 You can also set some tax code as default one in these transactions. Screenshot of typical tax codes settings can be found below. Note: the visibility of input tax codes can be customized differently for FI-AP accounting and logistics invoice verification (in case, when FI-AP should be used only in certain cases that require specific tax codes). In this example the visibility of input tax codes was customized in the same way for FI-AP and MM-LIV areas.
 
 ![image](https://user-images.githubusercontent.com/30869493/140476010-9d073da7-d9d2-4cb0-9480-343c1534574a.png)
+
+### Open and close booking periods
+
+Transaction `OB52`
