@@ -22,6 +22,7 @@
     
 - [SAP](/sap/sap.md)
   - [Fiori](/sap/fiori.md)
+  - [Reports](/sap/reports.md)
   - [SAP Background Jobs](/sap/sap_job.md)
   - [Session](/sap/session.md)
   - [Transactions](/sap/transactions.md)
