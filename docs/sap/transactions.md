@@ -44,3 +44,7 @@ Transaction `SE93`
 3. Transaction-Profile
 4. Tasktype: DIALOG
 5. Search for the transaction
+
+### Post activation of open item management GL Account
+
+Transaction: `FINS_ACTIVATE_OIM`
