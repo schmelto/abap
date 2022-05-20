@@ -8,13 +8,26 @@ The SQL Double has the task to replace the database layer and thus to replace al
 
 1. normal test scenario
 
-`Test Class` &rarr; `Code Under Test` &rarr; `Database Table`
+```mermaid
+  flowchart LR;
+      id1(Test Class)
+      id2(Code Under Test)
+      id3(Database Table)
+      id1 --> id2;
+      id2 --> id3;
+```
 
 2. test scenario where table will be replaced by a double
 
-`Test Class` &rarr; `Code Under Test` &rarr; `Double`
-
-`Test Class` &rarr; `Double`
+```mermaid
+  flowchart LR;
+      id1(Test Class)
+      id2(Code Under Test)
+      id3(Double)
+      id1 --> id2;
+      id2 --> id3;
+			id1 --> id3
+```
 
 The double replaces the data in the table. All CRUD operations run against the double.
 
