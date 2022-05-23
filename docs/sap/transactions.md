@@ -33,6 +33,9 @@
 
 Transactions `GS01`, `GS02` and `GS03`.
 
+![GS03](https://user-images.githubusercontent.com/30869493/169770738-bdf044b8-680b-446e-a907-32b399d7a5b4.png)
+
+
 ### Maintain Transactions
 
 Transaction `SE93`
