@@ -35,6 +35,70 @@ Transactions `GS01`, `GS02` and `GS03`.
 
 ![GS03](https://user-images.githubusercontent.com/30869493/169770738-bdf044b8-680b-446e-a907-32b399d7a5b4.png)
 
+**Example calls in ABAP:**
+```abap
+CALL FUNCTION 'G_SET_GET_ID_FROM_NAME'
+  EXPORTING
+*    client                   = 
+    shortname                = 
+*    old_setid                = 
+*    tabname                  = 
+*    fieldname                = 
+*    kokrs                    = 
+*    ktopl                    = 
+*    lib                      = 
+*    rname                    = 
+*    setclass                 = 
+*    check_set_empty          = space
+*    supress_popup            = space
+*    no_dynamic_sets          = space
+*  IMPORTING
+*    new_setid                = 
+*    set_info                 = 
+*  TABLES
+*    t_sets                   = 
+*  EXCEPTIONS
+*    no_set_found             = 1
+*    no_set_picked_from_popup = 2
+*    wrong_class              = 3
+*    wrong_subclass           = 4
+*    table_field_not_found    = 5
+*    fields_dont_match        = 6
+*    set_is_empty             = 7
+*    formula_in_set           = 8
+*    set_is_dynamic           = 9
+*    others                   = 10
+  .
+IF SY-SUBRC <> 0.
+* MESSAGE ID SY-MSGID TYPE SY-MSGTY NUMBER SY-MSGNO
+*   WITH SY-MSGV1 SY-MSGV2 SY-MSGV3 SY-MSGV4.
+ENDIF.
+```
+
+```abap
+CALL FUNCTION 'G_SET_SEARCH_FOR_INTERVAL'
+  EXPORTING
+    set              = 
+    from             = 
+*    to               = 
+*    tabelle          = 
+*    include_subsets  = 'X'
+*    internal_values  = space
+*  TABLES
+*    vallist          = 
+*  EXCEPTIONS
+*    value_not_found  = 1
+*    set_not_found    = 2
+*    conversion_error = 3
+*    wrong_settype    = 4
+*    wrong_interval   = 5
+*    others           = 6
+  .
+IF SY-SUBRC <> 0.
+* MESSAGE ID SY-MSGID TYPE SY-MSGTY NUMBER SY-MSGNO
+*   WITH SY-MSGV1 SY-MSGV2 SY-MSGV3 SY-MSGV4.
+ENDIF.
+```
 
 ### Maintain Transactions
 
