@@ -3367,3 +3367,5 @@
  </object>
 </java>
 ```
+
+[source](https://github.com/FreHu/eclipse-abap-keywordcolors/)
