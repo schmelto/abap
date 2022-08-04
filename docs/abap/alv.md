@@ -123,3 +123,7 @@ DATA(t001_alv) = NEW t001_alv( ).
 t001_alv->get_all_t001_data( ).
 t001_alv->display_t001_data( ).
 ```
+
+### Translate columns
+
+see [here](https://stackoverflow.com/questions/73231945/translate-custom-alv-columns/73232101#73232101)
