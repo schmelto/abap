@@ -219,8 +219,7 @@ With CTS, you:
 - Model system landscapes (e.g. DEV &#8594; TEST &#8594; PROD)
 - Transport changes through the landscape
 - Monitor your transports
-- Can integrate into Change Request Management
-  (ChaRM) and Quality Gate Management (QGM)
+- Can integrate into Change Request Management (ChaRM) and Quality Gate Management (QGM)
 
 &#8594; Safe and controlled
 
@@ -292,6 +291,7 @@ flowchart LR;
 ```
 
 ### Quality in ABAP development
+
 Central tools for ABAP quality: ABAP Unit Framework and ABAP Test Cockpit (ATC)
 
 ```mermaid
@@ -307,3 +307,44 @@ flowchart TD;
     id5 --> |executes| id4;
     id5 -.-> |can execute| id2;
 ```
+
+### Unit testing with ABAP Unit and test-driven development
+
+ABAP Unit checks the functional correctness of the tested object and verifies the intended program behavior at runtime. In test-driven development (TDD), unit tests drive the development process. ABAP Unit provides excellent 
+support for TDD.
+
+```mermaid
+flowchart LR;
+    id1(Write Test)
+    id2(Run Test and Fail)
+    id3(Write Code)
+    id4(Run Test and Pass)
+    id5(Refactor Code)
+    id1 --> id2;
+    id2 --> id3;
+    id3 --> id4;
+    id4 --> id5;
+    id5 --> id1;
+```
+
+### ABAP Test Cockpit – One tool for all quality aspects
+
+ATC Framework measures the quality of the 
+ABAP code and detects related issues.
+- Central infrastructure for functional, performance, security code checks
+- Uniform quality criteria for your whole system landscape
+- Quality assurance processes minimize errors in production systems
+- Smooth migration of ABAP code to SAP HANA and SAP S/4HANA
+- Extensible infrastructure for customer-specific checks
+
+### Remote code analysis with ATC
+
+Central ATC system to analyze custom code 
+in whole landscape
+- Remote stubs return a model from custom code
+- Check logic is executed on central system
+- Result is analyzed in central system
+- Integrated in the development system
+- All kinds of custom code are supported (incl. modifications and enhancements)
+- Suppress false-positive findings with pseudocomments
+- Essential for custom code migration to SAP S/4HANA
