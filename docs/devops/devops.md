@@ -257,3 +257,53 @@ CTS (Change and Transport System) + git = gCTS (Git-enabled CTS)
 - ABAP systems
 - CI Server (optinal - e.g. Jenkins)
 
+## Continuous Testing in ABAP
+
+### Types of testing
+
+- manual tests
+- scenario tests
+- system tests
+- integration tests
+- component tests
+- unit tests
+
+&#8594; the most testing should happen during unit testing.
+
+### Shift-left testing
+
+Resolve problems as early as possible by shifting quality controls left.
+
+### Unit testing
+
+Unit tests focus on a single unit of source code. Everything around that unit is replaced by test
+doubles (dependency isolation).
+
+```mermaid
+flowchart LR;
+    id1(Unit Test)
+    id2(Component under test)
+    id3(Depended-On Component)
+    id4(Test Double)
+    id1 --> |tests| id2;
+    id1 --> |uses| id4;
+    id4 --> id3;
+    id2 --> |depends on| id3
+```
+
+### Quality in ABAP development
+Central tools for ABAP quality: ABAP Unit Framework and ABAP Test Cockpit (ATC)
+
+```mermaid
+flowchart TD;
+    id1(ABAP Unit Framework)
+    id2(ABAP Unit Tests)
+    id3(Repository Object)
+    id4(ATC Check)
+    id5(ABAP Test Cockpit)
+    id1 --> |executes| id2;
+    id2 --> |tests| id3;
+    id4 --> |checks| id3;
+    id5 --> |executes| id4;
+    id5 -.-> |can execute| id2;
+```
