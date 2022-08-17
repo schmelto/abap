@@ -84,7 +84,7 @@ $n(n-1)/2$
       id5( )
       id1 --- id2;
       id2 --- id3;
-			id1 --- id3;
+      id1 --- id3;
       id1 --- id4;
       id2 --- id4;
       id3 --- id4;
@@ -93,3 +93,7 @@ $n(n-1)/2$
       id3 --- id5;
       id4 --- id5;
 ```
+
+#### Stable social relationships
+
+**Dunar's number** is a suggested cognitive limit to the number of people with whom one can maintain stable social relationships.
