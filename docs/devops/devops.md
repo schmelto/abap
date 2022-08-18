@@ -46,9 +46,9 @@ Trust = Speed
 
 ~ “The mythical man-month” – Fred Brooks, 1975
 
-$n(n-1)/2$
+$$\frac{n(n-1)}{2}$$
 
-3 persons = 3 connections
+$$3 persons = 3 connections$$
 
 ```mermaid
 flowchart LR;
@@ -60,7 +60,7 @@ flowchart LR;
     id1 --- id3
 ```
 
-4 persons = 6 connections
+$$4 persons = 6 connections$$
 
 ```mermaid
 flowchart LR;
@@ -76,7 +76,7 @@ flowchart LR;
       id3 --- id4;
 ```
 
-5 persons = 10 connections
+$$5 persons = 10 connections$$
 
 ```mermaid
 flowchart LR;
