@@ -21,6 +21,6 @@
   "homepage": "https://github.com/schmelto/abap#readme",
   "dependencies": {
     "docsify-cli": "^4.4.4",
-    "got": "^12.1.0"
+    "got": "^12.5.1"
   }
 }
