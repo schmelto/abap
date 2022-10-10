@@ -1,6 +1,6 @@
 ## BADI (Business Add-In)
 
-BADI (Business Add-In) is a SAP Object Oriented enhancement technique which is used to add own business functionality to the existing SAP standard functionality. 
+BADI (Business Add-In) is a SAP Object Oriented enhancement technique which is used to add own business functionality to the existing SAP standard functionality.
 
 Transaction: `SE18` - BAdI-Builder
 

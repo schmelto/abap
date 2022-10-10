@@ -6,8 +6,6 @@ For getting started you can checkout the [Hello World](/abap/hello_world.md)-sni
 
 For more references when coding in ABAP you can checkout the [ABAP Styleguides](https://github.com/SAP/styleguides).
 
-
-
 ### Overwrite BP also when containing an error
 
 ```abap
@@ -23,21 +21,22 @@ Collected information about the user and the system was previously only obtained
 ```abap
 cl_abap_context_info=>
 ```
+
 For example:
 
-| New Method | Old Environemnt |
-| ---------- | -------------- |
-| ET_SYSTEM_DATE | SYST-DATUM |
-| GET_SYSTEM_TIME | SYST-UZEIT |
-| GET_USER_TECHNICAL_NAME | SYST-UNAME |
-| GET_USER_LANGUAGE_ABAP_FORMAT | SYST-LANGU |
-| GET_USER_LANGUAGE_ISO_FORMAT | ISO format for language |
-| GET_USER_TIME_ZONE | SYST-TZONE |
-| GET_USER_ALIAS | Alias of user master data (Cloud) |
-| GET_SYSTEM_URL | URL of the system (Cloud) |
-| GET_USER_FORMATTED_NAME | BAPI_USER_GET_DETAIL |
-| GET_USER_DESCRIPTION | BAPI_USER_GET_DETAIL |
-| GET_USER_BUSINESS_PARTNER_ID | Business-Partner-ID of the user (Cloud) |
+| New Method                    | Old Environemnt                         |
+| ----------------------------- | --------------------------------------- |
+| ET_SYSTEM_DATE                | SYST-DATUM                              |
+| GET_SYSTEM_TIME               | SYST-UZEIT                              |
+| GET_USER_TECHNICAL_NAME       | SYST-UNAME                              |
+| GET_USER_LANGUAGE_ABAP_FORMAT | SYST-LANGU                              |
+| GET_USER_LANGUAGE_ISO_FORMAT  | ISO format for language                 |
+| GET_USER_TIME_ZONE            | SYST-TZONE                              |
+| GET_USER_ALIAS                | Alias of user master data (Cloud)       |
+| GET_SYSTEM_URL                | URL of the system (Cloud)               |
+| GET_USER_FORMATTED_NAME       | BAPI_USER_GET_DETAIL                    |
+| GET_USER_DESCRIPTION          | BAPI_USER_GET_DETAIL                    |
+| GET_USER_BUSINESS_PARTNER_ID  | Business-Partner-ID of the user (Cloud) |
 
 ### Set additional credit management data in S/4HANA
 
@@ -46,11 +45,13 @@ See [zfi_change_ukmbp_data](abap/samples/zfi_change_ukmbp_data.md).
 ### Remove leading zeros for WRITE statement
 
 **New:**
+
 ```abap
 message = |{ delivery ALPHA = OUT }|.
 ```
 
-**Old:** 
+**Old:**
+
 ```abap
 CALL FUNCTION 'CONVERSTION_EXIT_ALPHA_OUTPUT'
     EXPORTING in = delivery
@@ -135,17 +136,14 @@ SWITCH /bobf/conf_edit_mode( id_edit_mode
 WHEN 'R' THEN /bobf/if_conf_c=>sc_edit_read_only "Read
 WHEN 'U' THEN /bobf/if_conf_c=>sc_edit_exclusive "Update
 ELSE THROW zcx_4_monster_exceptions( ) ). "Unexpected
- ```
+```
 
 As you can see from this example, the data definition for BOPF_EDIT_MODE (/bobf/conf_edit_mode in this case) has moved into the body of the expression, thus dramatically reducing the lines of code needed. In addition, Java fans will jump up and down with joy to see that instead of the ABAP term RAISE EXCEPTION TYPE we now have the equivalent Java term, THROW. The usage is identical, however; the compiler evaluates the keywords RAISE EXCEPTION TYPE and THROW as if they were one and the same. As an added bonus, this actually makes more grammatical sense, because THROW and CATCH go together better than RAISE EXCEPTION TYPE and CATCH. (It’s lucky that exception classes have to start with CX; otherwise some witty programmer at SAP would create an exception class called UP.)
 
 It’s important to note that the values in the WHEN statements have to be constants, as in the preceding example. If you put something like MONSTER->HEAD_COUNT after the WHEN statement, then the SWITCH statement as a whole explodes and gives an incorrect error message saying “HEAD_COUNT” is unknown, when what it really means is that MONSTER->HEAD_COUNT isn’t a constant. If you need a WHEN statement with variables, you have to use the COND statement described in the next section.
 
- 
-
 To move away from monsters for a second, as painful as that is, here’s an example of combing two new ABAP constructs together. Let’s say you wanted to merge some values of different lengths into a uniform format. In standard SAP, table VBPA is a good example. It has customer (KUNNR) values, which are 10 characters long, and personnel number (PERNR) values, which are eight characters long. In the listing below, we fill new table LT_VAKPA with the data from VBPA, except the KUNDE field will always come out as a 10-character field no matter if a customer number or personnel number was in VBPA.
 
- 
 ```abap
 LOOP AT lt_vbpa ASSIGNING FIELD-SYMBOL(<ls_vbpa>).
 INSERT VALUE #(
@@ -245,6 +243,7 @@ SELECT * FROM bseg INTO TABLE @DATA(lt_bseg) WHERE belnr IN @belnr.
 ### TYPE REF TO DATA
 
 **New:**
+
 ```abap
 "VALUE is an IMPORTING parameter TYPE ANY
 IF value IS SUPPLIED.
@@ -253,6 +252,7 @@ ENDIF.
 ```
 
 **Old:**
+
 ```abap
 DATA: lo_do_calue TYPE REF TO DATA.
 "VALUE is an IMPORTING parameter TYPE ANY

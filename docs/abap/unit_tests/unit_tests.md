@@ -52,19 +52,19 @@ CLASS test IMPLEMENTATION.
 ENDCLASS.
 ```
 
-| **Risk Level** | Description |
-|----|----|
-| CRITICAL | The test could change system settings or the Customizing, for example. |
-| DANGEROUS | The test could change persistent application data, for example. |
-| HARMLESS | The test has no effect on persistent data or system settings. |
+| **Risk Level** | Description                                                            |
+| -------------- | ---------------------------------------------------------------------- |
+| CRITICAL       | The test could change system settings or the Customizing, for example. |
+| DANGEROUS      | The test could change persistent application data, for example.        |
+| HARMLESS       | The test has no effect on persistent data or system settings.          |
 
 `... RISK LEVEL {CRITICAL|DANGEROUS|HARMLESS}`
 
-| **Execution Duration** | Description |
-|---|---|
-| SHORT | an imperceptibly short execution duration is expected. This is the default value. |
-| MEDIUM | a noticeable execution duration is expected. |
-| LONG | a very noticeable execution duration is expected. |
+| **Execution Duration** | Description                                                                       |
+| ---------------------- | --------------------------------------------------------------------------------- |
+| SHORT                  | an imperceptibly short execution duration is expected. This is the default value. |
+| MEDIUM                 | a noticeable execution duration is expected.                                      |
+| LONG                   | a very noticeable execution duration is expected.                                 |
 
 `... DURATION {SHORT|MEDIUM|LONG}`
 
@@ -217,7 +217,6 @@ CLASS test IMPLEMENTATION.
 ENDCLASS.
 ```
 
-
 ### How to test private methods?
 
 To test private methods of the class we can use the `LOCAL FRIENDS` declaration.
@@ -241,5 +240,5 @@ ENDMETHOD.
 
 ### How to implement Unit Tests to a global Class in Eclipse?
 
-Declare Test Classes: 
+Declare Test Classes:
 ![declare_test_class](https://user-images.githubusercontent.com/30869493/116395736-cc037600-a824-11eb-88cb-d40260edc36a.png)

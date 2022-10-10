@@ -2,11 +2,14 @@
 
 ### Use inline declaration
 
-This: 
+This:
+
 ```abap
 DATA(name) = 'something'.
 ```
+
 is better than this:
+
 ```abap
 " anti-pattern
 DATA: name Type string.

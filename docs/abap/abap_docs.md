@@ -47,6 +47,7 @@ In an ABAP Doc comment, the following syntax can be used to refer to the documen
 ```
 
 Example:
+
 ```abap
 "! {@link PROG:z_test.class.METH:get_x_last_chars}
 ```
@@ -60,6 +61,7 @@ The following syntax can be used to define so called test relations in front of 
 ```
 
 Example:
+
 ```abap
 "! @testing my_cds_view
 ```

@@ -81,11 +81,10 @@ See [here](/abap/samples/z_import_excel_into_table.md).
 
 ### ABAP Extended Expressions
 
-* Run transaction `SE38`
-* `DEMO_EXPRESSIONS` -> <kbd>F8</kbd>
+- Run transaction `SE38`
+- `DEMO_EXPRESSIONS` -> <kbd>F8</kbd>
 
 ![DEMO_EXPRESSIONS](https://user-images.githubusercontent.com/30869493/133969858-3037542b-f9d4-45bf-948b-164281b7c712.png)
-
 
 ## Sample Classes
 
@@ -188,9 +187,9 @@ This function will popup an alert window for a given User with a given text.
 ```abap
 CALL FUNCTION 'TH_POPUP'
   EXPORTING
-    client         = 
-    user           = 
-    message        = 
+    client         =
+    user           =
+    message        =
 *    message_len    = 0
 *    cut_blanks     = ' '
 *  EXCEPTIONS
@@ -203,14 +202,7 @@ IF SY-SUBRC <> 0.
 ENDIF.
 ```
 
-
-
-
-
-
-
------
-
+---
 
 ```abap
 REPORT z_dec4_to_dec2.
@@ -426,7 +418,6 @@ START-OF-SELECTION.
 ![image](https://user-images.githubusercontent.com/30869493/109816607-3935c900-7c31-11eb-80e1-d25cb74ff6fd.png)
 
 ![image](https://user-images.githubusercontent.com/30869493/109816742-5b2f4b80-7c31-11eb-8fdb-3b614acd080a.png)
-
 
 ```abap
 TABLES: DD03L,
@@ -690,4 +681,5 @@ FORM GET_FIELDCATALOG.
 
 ENDFORM.
 ```
+
 found [here](https://blogs.sap.com/2020/08/22/how-to-find-the-table-that-stores-multiple-field-values-thats-what-abaper-and-functional-does-in-wriceff-development/#)

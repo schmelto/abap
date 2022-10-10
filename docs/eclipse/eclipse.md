@@ -6,22 +6,21 @@ https://tools.eu1.hana.ondemand.com/
 
 ## Shortcuts
 
-| shortcut | what it does |
-|----|----|
-| <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>A</kbd> | Eclipse Box Selection |
-| <kbd>alt</kbd> + <kbd>str</kbd> + <kbd>&#8595;</kbd> | duplicate lines |
-| <kbd>alt</kbd> + <kbd>U</kbd> | delete unused variables |
-| <kbd>shift</kbd> + <kbd>F1</kbd> | Pretty Printer |
-| <kbd>str</kbd> + <kbd>1</kbd> | Opens Quickfix/Quickassist Dialog on the selected element |
-| <kbd>str</kbd> + <kbd>H</kbd> | Abap Source Text Search |
-| <kbd>str</kbd> + <kbd>shift</kbd> + <kbd>alt</kbd> | Search |
-| <kbd>str</kbd> + <kbd>shift</kbd> + <kbd>L</kbd> | List all available Keybord-Shortcuts |
-| <kbd>str</kbd> + <kbd>space</kbd> | Auto complete |
-| <kbd>str</kbd> + <kbd><</kbd> | Comment |
-| <kbd>str</kbd> + <kbd><</kbd> | Undo comment |
+| shortcut                                             | what it does                                              |
+| ---------------------------------------------------- | --------------------------------------------------------- |
+| <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>A</kbd>     | Eclipse Box Selection                                     |
+| <kbd>alt</kbd> + <kbd>str</kbd> + <kbd>&#8595;</kbd> | duplicate lines                                           |
+| <kbd>alt</kbd> + <kbd>U</kbd>                        | delete unused variables                                   |
+| <kbd>shift</kbd> + <kbd>F1</kbd>                     | Pretty Printer                                            |
+| <kbd>str</kbd> + <kbd>1</kbd>                        | Opens Quickfix/Quickassist Dialog on the selected element |
+| <kbd>str</kbd> + <kbd>H</kbd>                        | Abap Source Text Search                                   |
+| <kbd>str</kbd> + <kbd>shift</kbd> + <kbd>alt</kbd>   | Search                                                    |
+| <kbd>str</kbd> + <kbd>shift</kbd> + <kbd>L</kbd>     | List all available Keybord-Shortcuts                      |
+| <kbd>str</kbd> + <kbd>space</kbd>                    | Auto complete                                             |
+| <kbd>str</kbd> + <kbd><</kbd>                        | Comment                                                   |
+| <kbd>str</kbd> + <kbd><</kbd>                        | Undo comment                                              |
 
 &#8594; more shortcuts can be found [here](https://blogs.sap.com/2021/07/16/abap-adt-frequently-used-short-cuts/?utm_campaign=ABAPWeekly&utm_medium=email&utm_source=ABAPWeekly_50)
-
 
 ## Maintain Text Elements
 
@@ -30,7 +29,6 @@ https://tools.eu1.hana.ondemand.com/
 ## Copy Table lines as ABAP statement
 
 ![image](https://user-images.githubusercontent.com/30869493/134353052-51ebeecf-1b41-4afa-b6ed-deae8e12727d.png)
-
 
 ![image](https://user-images.githubusercontent.com/30869493/134353002-35a29244-95fb-4379-adb6-0401995ce109.png)
 
@@ -74,7 +72,6 @@ ENDCLASS.
 ```
 
 ![image](https://user-images.githubusercontent.com/30869493/137023157-2ef3fe0a-bd5e-4baf-b213-cf0e5275016b.png)
-
 
 ![image](https://user-images.githubusercontent.com/30869493/137021266-03e38fb7-6ddb-41a6-9bf3-3a13c81fb488.png)
 
@@ -125,7 +122,7 @@ CLASS zcl_monster IMPLEMENTATION.
     ENDIF.
 
   ENDMETHOD.
-  
+
 ENDCLASS.
 ```
 
@@ -138,15 +135,16 @@ ENDCLASS.
 ![image](https://user-images.githubusercontent.com/30869493/138055873-b134dfa6-36c4-4284-9b19-52c780899f67.png)
 
 **Pattern:**
+
 ```abap
-" ToDo: 
+" ToDo:
 "   Date: ${date}
 "   User: ${user}
-"   Info: 
+"   Info:
 ```
 
-
 ## Share Code
+
 ![image](https://user-images.githubusercontent.com/30869493/164220060-9a94673d-4627-4f36-8df1-25cb6d6c0ade.png)
 
 ![image](https://user-images.githubusercontent.com/30869493/164220003-b6210531-6323-48ec-aa84-bf16aa4932d2.png)

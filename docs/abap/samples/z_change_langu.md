@@ -14,7 +14,7 @@ PARAMETERS: language LIKE sy-langu MATCHCODE OBJECT h_t002
 
 START-OF-SELECTION.
 
-* initialize internal table for server list 
+* initialize internal table for server list
   CLEAR: servers[].
 
 * get server list

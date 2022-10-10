@@ -100,7 +100,7 @@ CLASS t001_alv IMPLEMENTATION.
         DATA(colum_mandt) = columns->get_column( columnname = 'MANDT' ).
         " hide MANDT column
         colum_mandt->set_visible( value = if_salv_c_bool_sap=>false ).
-        
+
         " get the BUKRS column of the ALV
         DATA(colum_company) = columns->get_column( columnname = 'BUKRS' ).
         " change column name of BUKRS

@@ -2,23 +2,24 @@
 
 ## SAP Gui Shortcuts
 
-| shortcut | what it does |
-|----|----|
+| shortcut                                         | what it does           |
+| ------------------------------------------------ | ---------------------- |
 | <kbd>str</kbd> + <kbd>shift</kbd> + <kbd>7</kbd> | focus on execution bar |
-| <kbd>str</kbd> + <kbd>N</kbd> | open new window |
-| <kbd>str</kbd> + <kbd>Y</kbd> | mark in SAP Gui |
+| <kbd>str</kbd> + <kbd>N</kbd>                    | open new window        |
+| <kbd>str</kbd> + <kbd>Y</kbd>                    | mark in SAP Gui        |
 
 ## SAP Tables
-| table | what it does |
-|----|----|
-| ABLM_BLACKLIST | Blacklist Items of Executables from Applicaitons |
-| ACDOCA | Universal Journal Entry Line Items |
-| DD02L | SAP Tables data |
-| EKKN | Account Assignment in Purchasing Document |
-| PRGN_CORR2 | Correction Table for Modif. Transaction Codes in Area Menus data |
-| T001 | Company Codes |
-| TSTC | SAP Transaction Codes |
-| TSTCT | SAP Transaction Codes Texts |
+
+| table          | what it does                                                     |
+| -------------- | ---------------------------------------------------------------- |
+| ABLM_BLACKLIST | Blacklist Items of Executables from Applicaitons                 |
+| ACDOCA         | Universal Journal Entry Line Items                               |
+| DD02L          | SAP Tables data                                                  |
+| EKKN           | Account Assignment in Purchasing Document                        |
+| PRGN_CORR2     | Correction Table for Modif. Transaction Codes in Area Menus data |
+| T001           | Company Codes                                                    |
+| TSTC           | SAP Transaction Codes                                            |
+| TSTCT          | SAP Transaction Codes Texts                                      |
 
 ## Edit SAP Table entries
 
@@ -42,9 +43,10 @@
 - Enter Table
 - `/h`
 - in the variables fill variables and change the value to `x` with the pen icon
+
   - gd-edit &#8594; `x`
   - gd-sapedit &#8594; `x`
-  
+
   ![se16n debugger variables](https://user-images.githubusercontent.com/30869493/124892270-041ff580-dfda-11eb-81c8-fa1359b1bba4.png)
 
 - <kbd>ENTER</kbd> &#8594; <kbd>F8</kbd>
@@ -54,8 +56,8 @@
 - run transaction `SE37`
 - Execute Function Module `SE16N_INTERFACE`
   - I_TAB &#8594; set table
-	- I_EDIT &#8594; x
-	- I_SAPEDIT &#8594; x
+  - I_EDIT &#8594; x
+  - I_SAPEDIT &#8594; x
   - I_DISPLAY&#8594; x
 - <kbd>ENTER</kbd> &#8594; <kbd>F8</kbd>
 
@@ -72,10 +74,10 @@ Select the enteries you want to transport
 
 ## Find BADIs for an executed transaction &#8594; `CL_EXITHANDLER`
 
-* Go to transaction `SE80` Class `CL_EXITHANDLER`
-* navigate to method `get_instance` and set a Break-Point in the first line of `cl_exithandler=>get_class_name_by_interface`
-* Use the transaction in which you are BAdI-hunting
-* Examine the contents of the field exit_name whenever the processing stops at the breakpoint. I have found a case where exit_name was an unknown field. Then class_name gave a good clue to the name of the BAdI.
+- Go to transaction `SE80` Class `CL_EXITHANDLER`
+- navigate to method `get_instance` and set a Break-Point in the first line of `cl_exithandler=>get_class_name_by_interface`
+- Use the transaction in which you are BAdI-hunting
+- Examine the contents of the field exit_name whenever the processing stops at the breakpoint. I have found a case where exit_name was an unknown field. Then class_name gave a good clue to the name of the BAdI.
 
 ### Configure tax codes that will be available for end-users
 
@@ -103,13 +105,11 @@ Reset the EDI status using the program `RFFOEDI2`.
 
 ![RFFOEDI2](https://user-images.githubusercontent.com/30869493/143263710-fc0e2bfa-7d48-46a3-be58-1545ba19e451.png)
 
-
 **Reset table entries**
 
 The table entries should now be reset using the program `RFPAYM_RESET`.
 
 ![RFPAYM_RESET](https://user-images.githubusercontent.com/30869493/143263794-12ffa586-5923-4dfb-a93a-f4c28226e76f.png)
-
 
 **Now you can execute `RFF110S_REVERSE`**
 

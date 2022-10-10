@@ -50,4 +50,5 @@ Further variables can easily be added using following syntax:
 SELECT SINGLE * FROM tvarvc WHERE name = 'variable_name' AND type = 'P' INTO @tvarvc_line.
 UPDATE tvarvc FROM @( VALUE #( BASE tvarvc_line low = xxx ) ).
 ```
+
 **Warning:** Please make sure to maintain the variables in transaction **STVARV** in each system.
