@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "docsify serve ./docs"
+    "dev": "docsify serve ./docs",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "homepage": "https://github.com/schmelto/abap#readme",
   "dependencies": {
     "docsify-cli": "^4.4.4",
-    "got": "^12.5.1"
+    "got": "^12.5.1",
+    "prettier": "^2.7.1"
   }
 }

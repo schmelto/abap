@@ -1,9 +1,8 @@
-
 ## Function Modules
 
 Function modules are outdated. If you have to use one because you have tp implement a Busniess Transaction Event (BTE) or something else create the function module and call a global class within it. The class should handle all the logic, the function module is only for "calling" the global class.
 
-**Example:** 
+**Example:**
 
 We have following function module:
 
@@ -24,16 +23,18 @@ FUNCTION z_fi_edi_payext_2441
     t_edidd LIKE edidd
   EXCEPTIONS
     dont_create_idoc.
-    
+
     " place for some coding
-    
+
 ENDFUNCTION.
 ```
+
 We have to create a new object with the type of out global class in which our further coding will take place.
 
 ```abap
 DATA(zcl_fi_edi_payext_2441) = NEW zcl_fi_edi_payext_2441( ).
 ```
+
 > **Note:** Use inline declarations!
 
 Now we can call a public method of this class/object in which the logic part will be implemented.
@@ -70,11 +71,11 @@ The first draft of the global class can look something like this:
 CLASS zcl_fi_edi_payext_2441 DEFINITION
   PUBLIC
   CREATE PUBLIC .
-  
+
   PUBLIC SECTION.
     TYPES: t_regup TYPE TABLE OF regup,
            t_edidd TYPE TABLE OF edidd.
-           
+
     METHODS change_idoc
       IMPORTING
         im_mestyp          TYPE edidc-mestyp
@@ -100,7 +101,7 @@ CLASS zcl_fi_edi_payext_2441 IMPLEMENTATION.
   ENDMETHOD.
 ENDCLASS.
 ```
+
 > **Note:** We have to define `t_regup TYPE TABLE OF regup` and `t_edidd TYPE TABLE OF edidd` for using them in the class.
 
 > **Note:** The method which is also called in the function module has to be in the `PUBLIC SECTION` of the class.
-

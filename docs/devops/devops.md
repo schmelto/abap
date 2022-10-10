@@ -310,7 +310,7 @@ flowchart TD;
 
 ### Unit testing with ABAP Unit and test-driven development
 
-ABAP Unit checks the functional correctness of the tested object and verifies the intended program behavior at runtime. In test-driven development (TDD), unit tests drive the development process. ABAP Unit provides excellent 
+ABAP Unit checks the functional correctness of the tested object and verifies the intended program behavior at runtime. In test-driven development (TDD), unit tests drive the development process. ABAP Unit provides excellent
 support for TDD.
 
 ```mermaid
@@ -329,8 +329,9 @@ flowchart LR;
 
 ### ABAP Test Cockpit – One tool for all quality aspects
 
-ATC Framework measures the quality of the 
+ATC Framework measures the quality of the
 ABAP code and detects related issues.
+
 - Central infrastructure for functional, performance, security code checks
 - Uniform quality criteria for your whole system landscape
 - Quality assurance processes minimize errors in production systems
@@ -339,8 +340,9 @@ ABAP code and detects related issues.
 
 ### Remote code analysis with ATC
 
-Central ATC system to analyze custom code 
+Central ATC system to analyze custom code
 in whole landscape
+
 - Remote stubs return a model from custom code
 - Check logic is executed on central system
 - Result is analyzed in central system

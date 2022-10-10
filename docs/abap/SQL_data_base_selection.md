@@ -5,7 +5,7 @@
 Get only the different prices of `ckmlcr_single`.
 
 | MANDT | KALNR        | PVPRS |
-|-------|--------------|-------|
+| ----- | ------------ | ----- |
 | 0001  | 000100001200 | 15.00 |
 | 0001  | 000100001200 | 16.50 |
 | 0001  | 000100001200 | 15.00 |
@@ -19,7 +19,7 @@ SELECT DISTINCT pvprs FROM @ckmlcr_single AS ckmlcr_single INTO TABLE @DATA(uniq
 **Output:**
 
 | PVPRS |
-|-------|
+| ----- |
 | 15.00 |
 | 16.50 |
 

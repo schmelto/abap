@@ -20,7 +20,7 @@ DATA: lr_mo       TYPE REF TO   fsbp_memory_object,
 lr_mo ?= fsbp_memory_factory=>get_instance(
            i_partner    = ls_but000-partner
            i_table_name = if_fsbp_const_xo_objects=>mo_bp3100 ).
-           
+
 lr_mo->get_data_new( IMPORTING e_data_new = lt_bp3100 ).
 
 ls_bp3100-mandt = '100'.

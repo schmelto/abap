@@ -1,4 +1,3 @@
-
 ## Methods
 
 ### Get X last characters of a string
@@ -10,6 +9,7 @@ string = substring( val = string
                     off = strlen( string ) - 8
                     len = 8 ).
 ```
+
 **Problem:** Invalid access to a string using negative offset when the string is shorter then the offset!
 
 To implement this in our own custom class we can use following code:
@@ -52,9 +52,10 @@ START-OF-SELECTION.
 ```
 
 Why should we define a own method?
-* Reducing parameters in the function
-* make the code more readable
-* catch "Invalid access to a string using negative offset" within the `IF`-Statement in the method
+
+- Reducing parameters in the function
+- make the code more readable
+- catch "Invalid access to a string using negative offset" within the `IF`-Statement in the method
 
 We also can use a subroutine to get the same result in the code:
 
@@ -71,6 +72,7 @@ FORM get_x_last_chars USING string
   ENDIF.
 ENDFORM.
 ```
+
 This approach is outdated and should not used anymore (see [here](https://answers.sap.com/questions/13218815/when-does-it-make-sense-to-use-subroutines-form-an.html))
 
 An **other solution** for this problem can be solved like this:
@@ -79,6 +81,7 @@ An **other solution** for this problem can be solved like this:
 SELECT SINGLE stcd1 FROM lfa1 INTO data(stcd1) WHERE lifnr = 123456789.
 string = stcd1+8(8).
 ```
+
 `stcd1` is a 16 character field, you can to take the rightmost 8 characters of stcd1 with `stcd1+8(8)` (remember 8 + 8 = 16).
 
 **Unit test for this method:**

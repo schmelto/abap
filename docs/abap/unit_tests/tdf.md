@@ -42,6 +42,7 @@ The advantage of this technique is the stability of our test cases, because we c
 In this example we want to replace the tables `LFB1` and `KNB1` with doubles.
 
 **Definition:**
+
 ```abap
 PRIVATE SECTION.
 	CLASS-DATA:
@@ -85,7 +86,7 @@ METHOD class_teardown.
 ENDMETHOD.
 ```
 
-* In the setup method, the SQL environment is built first and the tables to be exchanged are specified.
-* Transfer of the test data to the environment
-* Execution of the test cases against the test data
-* Dismantling of the environment when the test class is dismantled
+- In the setup method, the SQL environment is built first and the tables to be exchanged are specified.
+- Transfer of the test data to the environment
+- Execution of the test cases against the test data
+- Dismantling of the environment when the test class is dismantled
