@@ -87,6 +87,7 @@ CLASS t001_alv IMPLEMENTATION.
     DATA(alv_functions_list) = alv->get_functions( ).
     " show toolbar
     alv_functions_list->set_all( value = if_salv_c_bool_sap=>true ).
+    " alv->get_functions( )->set_all( value = if_salv_c_bool_sap=>true ). " this would also be a valid implementation on showing the toolbar
     " don't display sort ascending
     alv_functions_list->set_sort_asc( value = if_salv_c_bool_sap=>false ).
   ENDMETHOD.
