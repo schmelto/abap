@@ -268,3 +268,91 @@ With Test Double Framework
 ```abap
 
 ```
+
+
+
+
+
+
+
+### Code is now under test - what's next?
+
+Just not like before!
+“Leave the code cleaner than you leave it have found."
+
+Improve code without functional change
+
+1. Capture insights
+    - Significantly rename forms/methods
+    - Name variables meaningfully
+    - Insert comments
+    - Write documentation
+2. create order
+    - Extract methods
+    - Remove commented out coding
+    - Correct formatting
+    - Increase readability (EQ, GT etc.)
+3. Improve testability
+    - Extract database accesses in class
+    - Extract API calls in class
+
+Insert new functions – Sprout Method / Sprout Class
+
+```abap
+CLASS zsome_demo_class IMPLEMENTATION.
+  METHOD do_something.
+  
+  " ... complex code here
+  
+  LOOP AT list ASSIGNING FIELD-SYMBOL(<listitem>).
+    process( <listitem> ).
+    save( <listitem> ).
+  ENDLOOP.
+  
+  " ... some more code here
+ENDMETHOD.
+
+" ...
+```
+```abap
+METHOD dedupliacte_empty_list.
+  DATA: list         TYPE tt_evopd,
+        expectedlist TYPE tt_evopd.
+  
+  DATA(democlass) = NEW zsome_demo_class( ).
+  DATA(deduplicatelist) = democlass->deduplicate( list ).
+  cl_abap_unit_assert=>assert_equals( exp = expectedlist act = deduplicatedlist ).
+ENDMETHOD.
+```
+
+```abap
+  METHOD do_something.
+  
+  " ... complex code here
+  
+  LOOP AT list ASSIGNING FIELD-SYMBOL(ylistitem>).
+    process( <listitem> ).
+    save( <listitem> ).
+  ENDLOOP.
+  
+  " ... some more code here
+ENDMETHOD.
+```
+```abap
+CLASS zsome_demo_class IMPLEMENTATION.
+  METHOD do_something.
+  
+  " ... complex code here
+  
+  DATA(dedulicatelist) = zdeduplicateor=>dedublicatedlist( list ).
+  
+  LOOP AT list ASSIGNING FIELD-SYMBOL(<listitem>).
+    process( <listitem> ).
+    save( <listitem> ).
+  ENDLOOP.
+  
+  " ... some more code here
+ENDMETHOD.
+
+" ...
+```
