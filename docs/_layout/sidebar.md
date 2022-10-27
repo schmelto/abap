@@ -8,6 +8,7 @@
   - [DATA and TYPES](/abap/data_and_types.md)
   - [Field Symbols](/abap/field_symbols.md)
   - [Function Modules](/abap/function_modules.md)
+  - [Golden Master Technique - Legacy Code](/abap/golden_master_technique.md)
   - [Methods](/abap/methods.md)
   - [Samples](/abap/samples/samples.md)
     - [ABAP Objects](/abap/samples/abap_objects.md)
