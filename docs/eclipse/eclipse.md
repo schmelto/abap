@@ -20,6 +20,7 @@ https://tools.eu1.hana.ondemand.com/
 | <kbd>str</kbd> + <kbd><</kbd>                        | Comment                                                   |
 | <kbd>str</kbd> + <kbd><</kbd>                        | Undo comment                                              |
 | <kbd>str</kbd> + <kbd>E</kbd>                        | Show all open windows                                     |
+
 &#8594; more shortcuts can be found [here](https://blogs.sap.com/2021/07/16/abap-adt-frequently-used-short-cuts/?utm_campaign=ABAPWeekly&utm_medium=email&utm_source=ABAPWeekly_50)
 
 ## Maintain Text Elements

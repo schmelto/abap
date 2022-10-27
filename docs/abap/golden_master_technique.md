@@ -7,6 +7,7 @@ graph LR
     C --> D[test Tests]
 
 ```
+
 ```mermaid
 graph LR
     E[make adjustements] --> F[new Snapshot Output]
@@ -26,6 +27,7 @@ Now the screenshotet outputs could be compared with [WinMerge](https://winmerge.
 ![image](https://user-images.githubusercontent.com/30869493/198228952-a9c97ce4-887a-4fe5-be69-34ea55fae551.png)
 
 ### Automation with ABAP Unit and classic reports
+
 Testing isolated form with return
 
 ```abap
@@ -48,15 +50,17 @@ ENDCLASS.
 CLASS addiere_tests IMPLEMENTATION.
   METHOD akz_add_1_and_2_equals_3.
     DATA: sum_actual TYPE int4.
-    
+
     PERFORM addiere IN PROGRAM zunit_test_forms USING 1 2 CHANGING sum_actual.
-    
+
     cl_abap_unit_assert=>assert_equals( exp = 3 act = sum_actual ).
   ENDMETHOD.
 ENDCLASS.
 
 ```
+
 ### Automation with ABAP Unit and classic reports
+
 Testing local class with return
 
 ```abap
@@ -97,6 +101,7 @@ ENDCLASS.
 ```
 
 ### Automation with ABAP Unit and classic reports
+
 Testing without structuring with CALL TRANSACTION
 
 ```abap
@@ -122,16 +127,16 @@ ENDLCASS.
 CLASS addierer_tests IMPLEMENTATION.
   METHOD addiere_call_transaction.
     DATA: messages TYPE STANDARD TABLE OF bscmscoll.
-    
+
     DATA(batchdata) = VALUE bdcdata_tab( ( programm = 'ZUNIT_TEST_NO_STRUCTURE' dynpro = '1000' dynbegin = 'X' fnam = '' fval = '' )
     ( programm = 'ZUNIT_TEST_NO_STRUCTURE' dynpro = '1000' dynbegin = '' fnam = 'SUM1' fval = '0' )
     ( programm = 'ZUNIT_TEST_NO_STRUCTURE' dynpro = '1000' dynbegin = '' fnam = 'SUM2' fval = '0' ) ).
-    
+
   CALL TRANSACTION 'ZUNIT_TEST_NO_STRUCTURE'
     USINF batchdata
     MODE 'N' UPDATE 'A'
     MESSAGES INTO messages.
-  
+
   cl_abap_unit_assert=>assert_equals(
     EXPORTING
       exp = |ERROR: 0|
@@ -141,6 +146,7 @@ ENDCLASS.
 ```
 
 ### BUT what if...
+
 - The Golden Master is big?
 - There is no output that you could simply tap?
 - random numbers are involved?
@@ -154,6 +160,7 @@ Identify "seams" where "relatively safe" changes can be made
 **Important:** log changes
 
 ### Import Golden Master data
+
 - Hard coded in the test
 - In unit tests via import from file / cluster table
 
@@ -169,6 +176,7 @@ cl_abap_unit_assert=>assert_equals(
 ```
 
 ### Generate Outputs
+
 - Insert write statements
 - Insert ALV
 - Output messages
@@ -180,6 +188,7 @@ cl_abap_unit_assert=>assert_equals(
 - etc.
 
 ### How to deal with database changes?
+
 - INSERTs / MODIFY etc. can be problem-free
 - Comment out
 - Replace with your own database tables
@@ -196,16 +205,16 @@ cl_abap_unit_assert=>assert_equals(
 7. Except: API calls are our result! Then log
 
 ### Replace dependencies with fake data
+
 Via interfaces, without a framework
 
 ```abap
 START-OF-SELECTION.
   DATA: sysdate TYPE dats.
-  
+
   sysdate = sy-datum.
   WRITE / sysdate.
 ```
-
 
 ```abap
 INTERFACE zif_calendar PUBLIC.
@@ -242,21 +251,22 @@ ENDCLASS.
 ```abap
 START-OF-SELECTION.
   DATA: sysdate TYPE dats.
-  
+
   sysdate = sy-datum.
   WRITE / sysdate.
-  
+
   DATA: calendar TYPE REF TO zfi_calendar.
   calendar = NEW zcalendar( ).
   sysdate = calendar->get_today( ).
   WRITE / sysdate.
-  
+
   calendar = NEW zcalendar_fake_christmas( ).
   sysdate = calendar->get_today( ).
   WRITE / sysdate.
 ```
 
-Output: 
+Output:
+
 ```
 26.11.2022
 26.11.2022
@@ -268,7 +278,7 @@ With Test Double Framework
 ```abap
 START-OF-SELECTION.
 DATA: sysdate TYPE dats.
-  
+
   sysdate = sy-datum.
   WRITE / sysdate.
 ```
@@ -283,13 +293,13 @@ ENDINTERFACE.
 METHOD tagesdatum_ist_jahresanfang.
   DATA: calendar_double TYPE REF TO zif_calendar.
   CONSTANTS: year_start TYPE dats VALUE '20220101'.
-  
+
   calendar_double ?= cl_abap_testdouble=>creat( 'zif_calendar' ).
   cl_abap_testdouble=>configure_call( calendar_double )->returning( year_start ).
-  
+
   calendar_double->get_today( ).
   DATA(today) = calendar_double->get_today( ).
-  
+
   cl_abap_unit_assert=>assert_equals( exp = year_start act = today ).
 ```
 
@@ -299,11 +309,11 @@ With Test Seams
 START-OF-SELECTION.
 
   DATA: summe TYPE int4.
-  
+
   PERFORM addiere USING 1 2 CHANGING summe.
   WRITE / summe.
   WRITE / sy-datum.
-  
+
 FORM addiere USINF sum1 sum2 CHANGING summe.
   summe = sum1 + sum2.
 ENDFORM.
@@ -313,18 +323,17 @@ ENDFORM.
 START-OF-SELECTION.
 
   DATA: summe TYPE int4.
-  
+
   PERFORM addiere USING 1 2 CHANGING summe.
   WRITE / summe.
   TEST-SEAM today.
     WRITE / sy-datum.
   END-TEST-SEAM.
-  
+
 FORM addiere USINF sum1 sum2 CHANGING summe.
   summe = sum1 + sum2.
 ENDFORM.
 ```
-
 
 ```abap
 CLASS zcalendar_test_seam DEFINITION PUBLIC FINAL CREATE PUBLIC.
@@ -354,7 +363,7 @@ CLASS calendartest IMPLEMENTATION.
     TEST-INJECTION today.
       today = `20221224`.
     END-TEST-INJECTION.
-    
+
     DATA(today) = NEW zcalendar_test_seam( ).->zfi_calendar~get_today( ).
     cl_abap_unit_asser=>assert_equals( exp = christmas2022 act = today ).
   ENDMETHOD.
@@ -369,42 +378,43 @@ Just not like before!
 Improve code without functional change
 
 1. Capture insights
-    - Significantly rename forms/methods
-    - Name variables meaningfully
-    - Insert comments
-    - Write documentation
+   - Significantly rename forms/methods
+   - Name variables meaningfully
+   - Insert comments
+   - Write documentation
 2. create order
-    - Extract methods
-    - Remove commented out coding
-    - Correct formatting
-    - Increase readability (EQ, GT etc.)
+   - Extract methods
+   - Remove commented out coding
+   - Correct formatting
+   - Increase readability (EQ, GT etc.)
 3. Improve testability
-    - Extract database accesses in class
-    - Extract API calls in class
+   - Extract database accesses in class
+   - Extract API calls in class
 
 Insert new functions – Sprout Method / Sprout Class
 
 ```abap
 CLASS zsome_demo_class IMPLEMENTATION.
   METHOD do_something.
-  
+
   " ... complex code here
-  
+
   LOOP AT list ASSIGNING FIELD-SYMBOL(<listitem>).
     process( <listitem> ).
     save( <listitem> ).
   ENDLOOP.
-  
+
   " ... some more code here
 ENDMETHOD.
 
 " ...
 ```
+
 ```abap
 METHOD dedupliacte_empty_list.
   DATA: list         TYPE tt_evopd,
         expectedlist TYPE tt_evopd.
-  
+
   DATA(democlass) = NEW zsome_demo_class( ).
   DATA(deduplicatelist) = democlass->deduplicate( list ).
   cl_abap_unit_assert=>assert_equals( exp = expectedlist act = deduplicatedlist ).
@@ -413,30 +423,31 @@ ENDMETHOD.
 
 ```abap
   METHOD do_something.
-  
+
   " ... complex code here
-  
+
   LOOP AT list ASSIGNING FIELD-SYMBOL(ylistitem>).
     process( <listitem> ).
     save( <listitem> ).
   ENDLOOP.
-  
+
   " ... some more code here
 ENDMETHOD.
 ```
+
 ```abap
 CLASS zsome_demo_class IMPLEMENTATION.
   METHOD do_something.
-  
+
   " ... complex code here
-  
+
   DATA(dedulicatelist) = zdeduplicateor=>dedublicatedlist( list ).
-  
+
   LOOP AT list ASSIGNING FIELD-SYMBOL(<listitem>).
     process( <listitem> ).
     save( <listitem> ).
   ENDLOOP.
-  
+
   " ... some more code here
 ENDMETHOD.
 
