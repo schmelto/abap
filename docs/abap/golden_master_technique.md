@@ -95,3 +95,176 @@ CLASS addiere_tests IMPLEMENTATION.
   ENDMETHOD.
 ENDCLASS.
 ```
+
+### Automation with ABAP Unit and classic reports
+Testing without structuring with CALL TRANSACTION
+
+```abap
+REPORT zunit_test_no_structure.
+
+PARAMETERS: sum1 TYPE int4,
+            sum2 TYPE int4.
+
+START-OF-SELECTION.
+  DATA(summe) = sum1 + sum2.
+  IF summe = 0.
+    MESSAGE |ERROR: 0| TYPE 'E'.
+  ELSE.
+    WRITE summe.
+  ENDIF.
+
+CLASS addierer_tests DEFINITION FINAL FOR TESTING
+RISK LEVEL HARMLESS.
+  PRIVATE SECTION.
+    METHODS: addiere_call_transaction FOR TESTING.
+ENDLCASS.
+
+CLASS addierer_tests IMPLEMENTATION.
+  METHOD addiere_call_transaction.
+    DATA: messages TYPE STANDARD TABLE OF bscmscoll.
+    
+    DATA(batchdata) = VALUE bdcdata_tab( ( programm = 'ZUNIT_TEST_NO_STRUCTURE' dynpro = '1000' dynbegin = 'X' fnam = '' fval = '' )
+    ( programm = 'ZUNIT_TEST_NO_STRUCTURE' dynpro = '1000' dynbegin = '' fnam = 'SUM1' fval = '0' )
+    ( programm = 'ZUNIT_TEST_NO_STRUCTURE' dynpro = '1000' dynbegin = '' fnam = 'SUM2' fval = '0' ) ).
+    
+  CALL TRANSACTION 'ZUNIT_TEST_NO_STRUCTURE'
+    USINF batchdata
+    MODE 'N' UPDATE 'A'
+    MESSAGES INTO messages.
+  
+  cl_abap_unit_assert=>assert_equals(
+    EXPORTING
+      exp = |ERROR: 0|
+      act = messages[ 1 ]-msgv1 ).
+  ENDMETHOD.
+ENDCLASS.
+```
+
+### BUT what if...
+- The Golden Master is big?
+- There is no output that you could simply tap?
+- random numbers are involved?
+- GUIDs and number range objects are used?
+- Queries take place on SY-DATUM?
+- External APIs are addressed?
+- Database changes are made?
+- ...
+
+Identify "seams" where "relatively safe" changes can be made
+**Important:** log changes
+
+### Import Golden Master data
+- Hard coded in the test
+- In unit tests via import from file / cluster table
+
+```abap
+DATA(golden_master) = zreal_golden_master=>read_master_table( key = 'GM1' ).
+
+" call coding that should be tested
+
+cl_abap_unit_assert=>assert_equals(
+    EXPORTING
+      exp = actual_result
+      act = golden_master ).
+```
+
+### Generate Outputs
+- Insert write statements
+- Insert ALV
+- Output messages
+- Insert return parameters
+- Memory export / import
+- Use buffer database
+- Use cluster tables
+- Call up your own logger
+- etc.
+
+### How to deal with database changes?
+- INSERTs / MODIFY etc. can be problem-free
+- Comment out
+- Replace with your own database tables
+- explicit deletion of INSERTs
+
+## GUIDS / Number Range Objects / Random Numbers / APIs
+
+1. Do not include GUIDS / number ranges in the comparison with the Golden Master
+2. Reset number range objects after each run
+3. Return GUIDs statically
+4. Replace random numbers with fixed values
+5. Replace SY-DATUM with a fixed value
+6. Disable APIS / replace with fixed values
+7. Except: API calls are our result! Then log
+
+### Replace dependencies with fake data
+Via interfaces, without a framework
+
+```abap
+START-OF-SELECTION.
+  DATA: sysdate TYPE dats.
+  
+  sysdate = sy-datum.
+  WRITE / sysdate.
+```
+
+
+```abap
+INTERFACE zif_calendar PUBLIC.
+  METHODS: get_today RETURNING VALUE(today) TYPE dats.
+```
+
+```abap
+CLASS zcalendar DEFINITION PUBLIC FINAL CREATE PUBLIC.
+  PUBLIC SECTION.
+    INTERFACES zfi_calendar.
+ENDCLASS.
+
+CLASS zcalendar IMPLEMENTATION.
+  METHOD zfi_calendar~get_today.
+    today = sy-datum.
+  ENDMETHOD.
+ENDCLASS.
+```
+
+```abap
+CLASS zcalendar_fake_christmas DEFINITION PUBLIC FINAL CREATE PUBLIC.
+  PUBLIC SECTION.
+    INTERFACES zfi_calendar.
+ENDCLASS.
+
+CLASS zcalendar IMPLEMENTATION.
+  METHOD zfi_calendar~get_today.
+    CONSTANTS: christmas TYPE dats VALUE |20221224|.
+    today = christmas.
+  ENDMETHOD.
+ENDCLASS.
+```
+
+```abap
+START-OF-SELECTION.
+  DATA: sysdate TYPE dats.
+  
+  sysdate = sy-datum.
+  WRITE / sysdate.
+  
+  DATA: calendar TYPE REF TO zfi_calendar.
+  calendar = NEW zcalendar( ).
+  sysdate = calendar->get_today( ).
+  WRITE / sysdate.
+  
+  calendar = NEW zcalendar_fake_christmas( ).
+  sysdate = calendar->get_today( ).
+  WRITE / sysdate.
+```
+
+Output: 
+```
+26.11.2022
+26.11.2022
+24.12.2022
+```
+
+With Test Double Framework
+
+```abap
+
+```
