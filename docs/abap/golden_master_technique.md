@@ -266,14 +266,100 @@ Output:
 With Test Double Framework
 
 ```abap
+START-OF-SELECTION.
+DATA: sysdate TYPE dats.
+  
+  sysdate = sy-datum.
+  WRITE / sysdate.
+```
 
+```abap
+INTERFACE zif_calendar PUBLIC.
+  METHODS: get_today RETURNING VALUE(today) TYPE dats.
+ENDINTERFACE.
+```
+
+```abap
+METHOD tagesdatum_ist_jahresanfang.
+  DATA: calendar_double TYPE REF TO zif_calendar.
+  CONSTANTS: year_start TYPE dats VALUE '20220101'.
+  
+  calendar_double ?= cl_abap_testdouble=>creat( 'zif_calendar' ).
+  cl_abap_testdouble=>configure_call( calendar_double )->returning( year_start ).
+  
+  calendar_double->get_today( ).
+  DATA(today) = calendar_double->get_today( ).
+  
+  cl_abap_unit_assert=>assert_equals( exp = year_start act = today ).
+```
+
+With Test Seams
+
+```abap
+START-OF-SELECTION.
+
+  DATA: summe TYPE int4.
+  
+  PERFORM addiere USING 1 2 CHANGING summe.
+  WRITE / summe.
+  WRITE / sy-datum.
+  
+FORM addiere USINF sum1 sum2 CHANGING summe.
+  summe = sum1 + sum2.
+ENDFORM.
+```
+
+```abap
+START-OF-SELECTION.
+
+  DATA: summe TYPE int4.
+  
+  PERFORM addiere USING 1 2 CHANGING summe.
+  WRITE / summe.
+  TEST-SEAM today.
+    WRITE / sy-datum.
+  END-TEST-SEAM.
+  
+FORM addiere USINF sum1 sum2 CHANGING summe.
+  summe = sum1 + sum2.
+ENDFORM.
 ```
 
 
+```abap
+CLASS zcalendar_test_seam DEFINITION PUBLIC FINAL CREATE PUBLIC.
+  PUBLIC SECTION.
+    INTERFACES zif_calendar.
+ENDCLASS.
 
+CLASS zcalendar_test_seam IMPLEMENTATION.
+  METHOD zif_calendar~get_today.
+    TEST-SEAM today.
+        today = sy-datum.
+    END-TEST-SEAM.
+  ENDMETHOD.
+ENDLCASS.
+```
 
+```abap
+CLASS calendartest DEFINITION FINAL FOR TESTING DURATION SHORT RISK LEVEL HARMLESS.
+  PRIVATE SECTION.
+    METHODS:
+      today_is_christmas FOR TESTING RAISING cx_static_check.
+ENDLCASS.
 
-
+CLASS calendartest IMPLEMENTATION.
+  METHOD today_is_christmas.
+    CONSTANTS: chsitmas2022 TYPE dats VALUE '20221224'.
+    TEST-INJECTION today.
+      today = `20221224`.
+    END-TEST-INJECTION.
+    
+    DATA(today) = NEW zcalendar_test_seam( ).->zfi_calendar~get_today( ).
+    cl_abap_unit_asser=>assert_equals( exp = christmas2022 act = today ).
+  ENDMETHOD.
+ENDLASS.
+```
 
 ### Code is now under test - what's next?
 
