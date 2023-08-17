@@ -14,7 +14,7 @@ https://tools.eu1.hana.ondemand.com/
 | <kbd>shift</kbd> + <kbd>F1</kbd>                     | Pretty Printer                                            |
 | <kbd>str</kbd> + <kbd>1</kbd>                        | Opens Quickfix/Quickassist Dialog on the selected element |
 | <kbd>str</kbd> + <kbd>H</kbd>                        | Abap Source Text Search                                   |
-| <kbd>str</kbd> + <kbd>shift</kbd> + <kbd>A</kbd>   | Search                                                    |
+| <kbd>str</kbd> + <kbd>shift</kbd> + <kbd>A</kbd>     | Search                                                    |
 | <kbd>str</kbd> + <kbd>shift</kbd> + <kbd>L</kbd>     | List all available Keybord-Shortcuts                      |
 | <kbd>str</kbd> + <kbd>space</kbd>                    | Auto complete                                             |
 | <kbd>str</kbd> + <kbd><</kbd>                        | Comment                                                   |
