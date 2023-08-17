@@ -295,3 +295,26 @@ SELECT FROM t001
 ```abap
 SELECT FROM @lt_itab as lt_itab ...
 ```
+<<<<<<< HEAD
+=======
+
+### Range Table
+
+`output`
+
+| objnr |
+| ----- |
+| 123456 |
+| .... |
+
+```abap
+DATA: range_objnr TYPE RANGE OF objnr.
+
+range_objnr = VALUE #( FOR wa IN output(
+    sign = 'I'
+    option = 'EQ'
+    low = wa-objnr
+  )
+).
+```
+>>>>>>> e3c5a2c (docs: range table)
