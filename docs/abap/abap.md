@@ -277,3 +277,15 @@ lo_monster = zcl_monster_factory( lt_monsters[ monster_name = ld_monster_name]-m
 READ TABLE lt_monsters INTO ls_mosnters WITH KEY monster_name = ld_monster_name.
 lo_monster = zcl_monster_factory( ls_monster-monster_number ).
 ```
+
+### Use Case statements in SQL
+
+```abap
+SELECT FROM t001
+  FIELDS bukrs,
+  CASE
+    WHEN bukrs = '0001' THEN '9999'
+    ELSE 'test'
+    END AS bukrs_1
+  INTO TABLE @DATA(output).
+```
