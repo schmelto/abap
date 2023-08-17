@@ -289,3 +289,9 @@ SELECT FROM t001
     END AS bukrs_1
   INTO TABLE @DATA(output).
 ```
+
+### select from internal table
+
+```abap
+SELECT FROM @lt_itab as lt_itab ...
+```
